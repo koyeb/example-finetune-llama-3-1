@@ -1,0 +1,17 @@
+mlx.core.array.astype
+*********************
+
+array.astype(self, dtype: Dtype, stream: Stream | Device | None = None) -> array
+
+   Cast the array to a specified type.
+
+   Parameters:
+      * **dtype** (*Dtype*) -- Type to which the array is cast.
+
+      * **stream** (*Stream*) -- Stream (or device) for the operation.
+
+   Returns:
+      The array with type "dtype".
+
+   Return type:
+      *array*

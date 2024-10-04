@@ -1,0 +1,21 @@
+mlx.core.stack
+**************
+
+stack(arrays: List[array], axis: int | None = 0, *, stream: None | Stream | Device = None) -> array
+
+   Stacks the arrays along a new axis.
+
+   Parameters:
+      * **arrays** (*list**(**array**)*) -- A list of arrays to stack.
+
+      * **axis** (*int**, **optional*) -- The axis in the result array
+        along which the input arrays are stacked. Defaults to "0".
+
+      * **stream** (*Stream**, **optional*) -- Stream or device.
+        Defaults to "None".
+
+   Returns:
+      The resulting stacked array.
+
+   Return type:
+      *array*

@@ -1,0 +1,6 @@
+mlx.core.array.ndim
+*******************
+
+property array.ndim
+
+   The array's dimension.

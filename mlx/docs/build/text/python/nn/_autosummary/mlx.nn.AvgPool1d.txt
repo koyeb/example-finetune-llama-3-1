@@ -1,0 +1,40 @@
+mlx.nn.AvgPool1d
+****************
+
+class AvgPool1d(kernel_size: int | Tuple[int, int], stride: int | Tuple[int, int] | None = None, padding: int | Tuple[int, int] | None = 0)
+
+   Applies 1-dimensional average pooling.
+
+   Assuming an input of shape (N, L, C) and "kernel_size" is k, the
+   output is a tensor of shape (N, L_{out}, C), given by:
+
+         \text{out}(N_i, t, C_j) = \frac{1}{k} \sum_{m=0, \ldots, k -
+         1}         \text{input}(N_i, \text{stride} \times t + m,
+         C_j),
+
+   where L_{out} = \left\lfloor \frac{L + 2 \times \text{padding} -
+   \text{kernel\_size}}{\text{stride}}\right\rfloor + 1.
+
+   Parameters:
+      * **kernel_size** (*int** or **tuple**(**int**)*) -- The size of
+        the pooling window kernel.
+
+      * **stride** (*int** or **tuple**(**int**)**, **optional*) --
+        The stride of the pooling window. Default: "kernel_size".
+
+      * **padding** (*int** or **tuple**(**int**)**, **optional*) --
+        How much zero padding to apply to the input. The padding
+        amount is applied to both sides of the spatial axis. Default:
+        "0".
+
+   -[ Examples ]-
+
+   >>> import mlx.core as mx
+   >>> import mlx.nn.layers as nn
+   >>> x = mx.random.normal(shape=(4, 16, 5))
+   >>> pool = nn.AvgPool1d(kernel_size=2, stride=2)
+   >>> pool(x)
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

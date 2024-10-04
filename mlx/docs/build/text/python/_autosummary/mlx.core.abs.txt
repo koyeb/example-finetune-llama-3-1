@@ -1,0 +1,15 @@
+mlx.core.abs
+************
+
+abs(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise absolute value.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The absolute value of "a".
+
+   Return type:
+      *array*

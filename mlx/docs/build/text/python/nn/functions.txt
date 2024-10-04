@@ -1,0 +1,179 @@
+Functions
+*********
+
+Layers without parameters (e.g. activation functions) are also
+provided as simple functions.
+
++------------+--------------------------------------------------------------------------------------------+
+| "elu"(x[,  | Applies the Exponential Linear Unit.                                                       |
+| alpha])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "gelu"(x)  | Applies the Gaussian Error Linear Units function.                                          |
++------------+--------------------------------------------------------------------------------------------+
+| "gelu_app  | An approximation to Gaussian Error Linear Unit.                                            |
+| rox"(x)    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "gelu_fas  | A fast approximation to Gaussian Error Linear Unit.                                        |
+| t_approx"  |                                                                                            |
+| (x)        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "glu"(x[,  | Applies the gated linear unit function.                                                    |
+| axis])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "hard_shr  | Applies the HardShrink activation function.                                                |
+| ink"(x[,   |                                                                                            |
+| lambd])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "hard_tan  | Applies the HardTanh function.                                                             |
+| h"(x[,     |                                                                                            |
+| min_val,   |                                                                                            |
+| max_val])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "hardswis  | Applies the hardswish function, element-wise.                                              |
+| h"(x)      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "leaky_re  | Applies the Leaky Rectified Linear Unit.                                                   |
+| lu"(x[, n  |                                                                                            |
+| egative_s  |                                                                                            |
+| lope])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "log_sigm  | Applies the Log Sigmoid function.                                                          |
+| oid"(x)    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "log_soft  | Applies the Log Softmax function.                                                          |
+| max"(x[,   |                                                                                            |
+| axis])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "mish"(x)  | Applies the Mish function, element-wise.                                                   |
++------------+--------------------------------------------------------------------------------------------+
+| "prelu"(x, | Applies the element-wise parametric ReLU.                                                  |
+| alpha)     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "relu"(x)  | Applies the Rectified Linear Unit.                                                         |
++------------+--------------------------------------------------------------------------------------------+
+| "relu6"(x) | Applies the Rectified Linear Unit 6.                                                       |
++------------+--------------------------------------------------------------------------------------------+
+| "selu"(x)  | Applies the Scaled Exponential Linear Unit.                                                |
++------------+--------------------------------------------------------------------------------------------+
+| "sigmoid"  | Applies the sigmoid function.                                                              |
+| (x)        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "silu"(x)  | Applies the Sigmoid Linear Unit.                                                           |
++------------+--------------------------------------------------------------------------------------------+
+| "softmax"  | Applies the Softmax function.                                                              |
+| (x[,       |                                                                                            |
+| axis])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "softmin"  | Applies the Softmin function.                                                              |
+| (x[,       |                                                                                            |
+| axis])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "softplus  | Applies the Softplus function.                                                             |
+| "(x)       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "softshri  | Applies the Softshrink activation function.                                                |
+| nk"(x[,    |                                                                                            |
+| lambd])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "step"(x[, | Applies the Step Activation Function.                                                      |
+| threshold  |                                                                                            |
+| ])         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "tanh"(x)  | Applies the hyperbolic tangent function.                                                   |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.nn.elu
+
+  * "elu"
+
+* mlx.nn.gelu
+
+  * "gelu"
+
+* mlx.nn.gelu_approx
+
+  * "gelu_approx"
+
+* mlx.nn.gelu_fast_approx
+
+  * "gelu_fast_approx"
+
+* mlx.nn.glu
+
+  * "glu"
+
+* mlx.nn.hard_shrink
+
+  * "hard_shrink"
+
+* mlx.nn.hard_tanh
+
+  * "hard_tanh"
+
+* mlx.nn.hardswish
+
+  * "hardswish"
+
+* mlx.nn.leaky_relu
+
+  * "leaky_relu"
+
+* mlx.nn.log_sigmoid
+
+  * "log_sigmoid"
+
+* mlx.nn.log_softmax
+
+  * "log_softmax"
+
+* mlx.nn.mish
+
+  * "mish"
+
+* mlx.nn.prelu
+
+  * "prelu"
+
+* mlx.nn.relu
+
+  * "relu"
+
+* mlx.nn.relu6
+
+  * "relu6"
+
+* mlx.nn.selu
+
+  * "selu"
+
+* mlx.nn.sigmoid
+
+  * "sigmoid"
+
+* mlx.nn.silu
+
+  * "silu"
+
+* mlx.nn.softmax
+
+  * "softmax"
+
+* mlx.nn.softmin
+
+  * "softmin"
+
+* mlx.nn.softplus
+
+  * "softplus"
+
+* mlx.nn.softshrink
+
+  * "softshrink"
+
+* mlx.nn.step
+
+  * "step"
+
+* mlx.nn.tanh
+
+  * "tanh"

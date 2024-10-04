@@ -1,0 +1,6 @@
+mlx.core.distributed.is_available
+*********************************
+
+is_available() -> bool
+
+   Check if a communication backend is available.

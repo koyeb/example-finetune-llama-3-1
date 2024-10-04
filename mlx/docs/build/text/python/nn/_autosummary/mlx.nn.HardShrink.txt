@@ -1,0 +1,15 @@
+mlx.nn.HardShrink
+*****************
+
+class HardShrink
+
+   Applies the HardShrink function.
+
+   See "hard_shrink()" for the functional equivalent.
+
+   Parameters:
+      **lambd** -- the \lambda value for Hardshrink. Default: "0.5"
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

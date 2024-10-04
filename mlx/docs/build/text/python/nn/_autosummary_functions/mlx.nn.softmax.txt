@@ -1,0 +1,8 @@
+mlx.nn.softmax
+**************
+
+class softmax(x, axis=-1)
+
+   Applies the Softmax function.
+
+   Applies \frac{e^{x_i}}{\sum_j e^{x_j}} element wise.

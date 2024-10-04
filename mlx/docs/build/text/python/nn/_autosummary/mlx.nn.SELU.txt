@@ -1,0 +1,12 @@
+mlx.nn.SELU
+***********
+
+class SELU
+
+   Applies the Scaled Exponential Linear Unit.
+
+   See "selu()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

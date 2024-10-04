@@ -1,0 +1,6 @@
+mlx.core.metal.stop_capture
+***************************
+
+stop_capture() -> None
+
+   Stop a Metal capture.

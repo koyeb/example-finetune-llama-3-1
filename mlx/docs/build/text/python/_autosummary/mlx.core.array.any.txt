@@ -1,0 +1,6 @@
+mlx.core.array.any
+******************
+
+array.any(self, axis: int | Sequence[int] | None = None, keepdims: bool = False, *, stream: Stream | Device | None = None) -> array
+
+   See "any()".

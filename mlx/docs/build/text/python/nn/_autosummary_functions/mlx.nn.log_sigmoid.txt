@@ -1,0 +1,8 @@
+mlx.nn.log_sigmoid
+******************
+
+class log_sigmoid(x)
+
+   Applies the Log Sigmoid function.
+
+   Applies \log(\sigma(x)) = -\log(1 + e^{-x}) element wise.

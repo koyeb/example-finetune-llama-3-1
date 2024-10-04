@@ -1,0 +1,19 @@
+mlx.core.concatenate
+********************
+
+concatenate(arrays: List[array], axis: int | None = 0, *, stream: None | Stream | Device = None) -> array
+
+   Concatenate the arrays along the given axis.
+
+   Parameters:
+      * **arrays** (*list**(**array**)*) -- Input "list" or "tuple" of
+        arrays.
+
+      * **axis** (*int**, **optional*) -- Optional axis to concatenate
+        along. If unspecified defaults to "0".
+
+   Returns:
+      The concatenated array.
+
+   Return type:
+      *array*

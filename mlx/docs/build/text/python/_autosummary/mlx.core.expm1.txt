@@ -1,0 +1,17 @@
+mlx.core.expm1
+**************
+
+expm1(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise exponential minus 1.
+
+   Computes "exp(x) - 1" with greater precision for small "x".
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The expm1 of "a".
+
+   Return type:
+      *array*

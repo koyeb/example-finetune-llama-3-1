@@ -1,0 +1,156 @@
+Loss Functions
+**************
+
++------------+--------------------------------------------------------------------------------------------+
+| "binary_c  | Computes the binary cross entropy loss.                                                    |
+| ross_entr  |                                                                                            |
+| opy"(inpu  |                                                                                            |
+| ts,        |                                                                                            |
+| targets[,  |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "cosine_s  | Computes the cosine similarity between the two inputs.                                     |
+| imilarity  |                                                                                            |
+| _loss"(x1, |                                                                                            |
+| x2[, axis, |                                                                                            |
+| eps, ...]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "cross_en  | Computes the cross entropy loss.                                                           |
+| tropy"(lo  |                                                                                            |
+| gits,      |                                                                                            |
+| targets[,  |                                                                                            |
+| weights,   |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "gaussian  | Computes the negative log likelihood loss for a Gaussian distribution.                     |
+| _nll_loss  |                                                                                            |
+| "(inputs,  |                                                                                            |
+| targets,   |                                                                                            |
+| vars[,     |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "hinge_lo  | Computes the hinge loss between inputs and targets.                                        |
+| ss"(input  |                                                                                            |
+| s,         |                                                                                            |
+| targets[,  |                                                                                            |
+| reduction  |                                                                                            |
+| ])         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "huber_lo  | Computes the Huber loss between inputs and targets.                                        |
+| ss"(input  |                                                                                            |
+| s,         |                                                                                            |
+| targets[,  |                                                                                            |
+| delta, re  |                                                                                            |
+| duction])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "kl_div_l  | Computes the Kullback-Leibler divergence loss.                                             |
+| oss"(inpu  |                                                                                            |
+| ts,        |                                                                                            |
+| targets[,  |                                                                                            |
+| axis, red  |                                                                                            |
+| uction])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "l1_loss"  | Computes the L1 loss.                                                                      |
+| (predicti  |                                                                                            |
+| ons,       |                                                                                            |
+| targets[,  |                                                                                            |
+| reduction  |                                                                                            |
+| ])         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "log_cosh  | Computes the log cosh loss between inputs and targets.                                     |
+| _loss"(in  |                                                                                            |
+| puts,      |                                                                                            |
+| targets[,  |                                                                                            |
+| reduction  |                                                                                            |
+| ])         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "margin_r  | Calculate the margin ranking loss that loss given inputs x_1, x_2 and a label y            |
+| anking_lo  | (containing 1 or -1).                                                                      |
+| ss"(input  |                                                                                            |
+| s1,        |                                                                                            |
+| inputs2,   |                                                                                            |
+| targets)   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "mse_loss  | Computes the mean squared error loss.                                                      |
+| "(predict  |                                                                                            |
+| ions,      |                                                                                            |
+| targets[,  |                                                                                            |
+| reduction  |                                                                                            |
+| ])         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "nll_loss  | Computes the negative log likelihood loss.                                                 |
+| "(inputs,  |                                                                                            |
+| targets[,  |                                                                                            |
+| axis, red  |                                                                                            |
+| uction])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "smooth_l  | Computes the smooth L1 loss.                                                               |
+| 1_loss"(p  |                                                                                            |
+| rediction  |                                                                                            |
+| s,         |                                                                                            |
+| targets[,  |                                                                                            |
+| beta,      |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "triplet_  | Computes the triplet loss for a set of anchor, positive, and negative samples.             |
+| loss"(anc  |                                                                                            |
+| hors,      |                                                                                            |
+| positives, |                                                                                            |
+| negatives) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.nn.losses.binary_cross_entropy
+
+  * "binary_cross_entropy"
+
+* mlx.nn.losses.cosine_similarity_loss
+
+  * "cosine_similarity_loss"
+
+* mlx.nn.losses.cross_entropy
+
+  * "cross_entropy"
+
+* mlx.nn.losses.gaussian_nll_loss
+
+  * "gaussian_nll_loss"
+
+* mlx.nn.losses.hinge_loss
+
+  * "hinge_loss"
+
+* mlx.nn.losses.huber_loss
+
+  * "huber_loss"
+
+* mlx.nn.losses.kl_div_loss
+
+  * "kl_div_loss"
+
+* mlx.nn.losses.l1_loss
+
+  * "l1_loss"
+
+* mlx.nn.losses.log_cosh_loss
+
+  * "log_cosh_loss"
+
+* mlx.nn.losses.margin_ranking_loss
+
+  * "margin_ranking_loss"
+
+* mlx.nn.losses.mse_loss
+
+  * "mse_loss"
+
+* mlx.nn.losses.nll_loss
+
+  * "nll_loss"
+
+* mlx.nn.losses.smooth_l1_loss
+
+  * "smooth_l1_loss"
+
+* mlx.nn.losses.triplet_loss
+
+  * "triplet_loss"

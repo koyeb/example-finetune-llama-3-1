@@ -1,0 +1,41 @@
+mlx.nn.init.he_uniform
+**********************
+
+he_uniform(dtype: Dtype = mlx.core.float32) -> Callable[[array, str, float], array]
+
+   A He uniform (Kaiming uniform) initializer.
+
+   This initializer samples from a uniform distribution with a range
+   computed from the number of input ("fan_in") or output ("fan_out")
+   units according to:
+
+      \sigma = \gamma \sqrt{\frac{3.0}{\text{fan}}}
+
+   where \text{fan} is either the number of input units when the
+   "mode" is ""fan_in"" or output units when the "mode" is
+   ""fan_out"".
+
+   For more details see the original reference: Delving Deep into
+   Rectifiers: Surpassing Human-Level Performance on ImageNet
+   Classification
+
+   Parameters:
+      **dtype** (*Dtype**, **optional*) -- The data type of the array.
+      Default: "float32".
+
+   Returns:
+      An initializer that returns an array with the same shape as the
+      input, filled with samples from  the He uniform distribution.
+
+   Return type:
+      *Callable*[[*array*, *str*, *float*], *array*]
+
+   -[ Example ]-
+
+   >>> init_fn = nn.init.he_uniform()
+   >>> init_fn(mx.zeros((2, 2)))  # uses fan_in
+   array([[0.0300242, -0.0184009],
+          [0.793615, 0.666329]], dtype=float32)
+   >>> init_fn(mx.zeros((2, 2)), mode="fan_out", gain=5)
+   array([[-1.64331, -2.16506],
+          [1.08619, 5.79854]], dtype=float32)

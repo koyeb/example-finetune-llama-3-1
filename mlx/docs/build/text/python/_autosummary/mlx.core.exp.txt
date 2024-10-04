@@ -1,0 +1,15 @@
+mlx.core.exp
+************
+
+exp(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise exponential.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The exponential of "a".
+
+   Return type:
+      *array*

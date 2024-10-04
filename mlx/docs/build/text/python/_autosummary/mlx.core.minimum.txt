@@ -1,0 +1,21 @@
+mlx.core.minimum
+****************
+
+minimum(a: scalar | array, b: scalar | array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise minimum.
+
+   Take the element-wise min of two arrays with numpy-style
+   broadcasting semantics. Either or both input arrays can also be
+   scalars.
+
+   Parameters:
+      * **a** (*array*) -- Input array or scalar.
+
+      * **b** (*array*) -- Input array or scalar.
+
+   Returns:
+      The min of "a" and "b".
+
+   Return type:
+      *array*

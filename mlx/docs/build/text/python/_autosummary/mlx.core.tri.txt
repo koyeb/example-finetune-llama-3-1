@@ -1,0 +1,29 @@
+mlx.core.tri
+************
+
+tri(n: int, m: int, k: int, dtype: Dtype | None = None, *, stream: None | Stream | Device = None) -> array
+
+   An array with ones at and below the given diagonal and zeros
+   elsewhere.
+
+   Parameters:
+      * **n** (*int*) -- The number of rows in the output.
+
+      * **m** (*int**, **optional*) -- The number of cols in the
+        output. Defaults to "None".
+
+      * **k** (*int**, **optional*) -- The diagonal of the 2-D array.
+        Defaults to "0".
+
+      * **dtype** (*Dtype**, **optional*) -- Data type of the output
+        array. Defaults to "float32".
+
+      * **stream** (*Stream**, **optional*) -- Stream or device.
+        Defaults to "None".
+
+   Returns:
+      Array with its lower triangle filled with ones and zeros
+      elsewhere
+
+   Return type:
+      *array*

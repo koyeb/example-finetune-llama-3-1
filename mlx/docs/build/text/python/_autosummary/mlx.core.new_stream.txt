@@ -1,0 +1,6 @@
+mlx.core.new_stream
+*******************
+
+new_stream(device: Device) -> Stream
+
+   Make a new stream on the given device.

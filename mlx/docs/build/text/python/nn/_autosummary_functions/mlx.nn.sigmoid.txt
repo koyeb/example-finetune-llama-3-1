@@ -1,0 +1,8 @@
+mlx.nn.sigmoid
+**************
+
+class sigmoid(x)
+
+   Applies the sigmoid function.
+
+      \text{Sigmoid}(x) = \sigma(x) = \frac{1}{1 + \exp(-x)}

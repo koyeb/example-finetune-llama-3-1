@@ -1,0 +1,21 @@
+mlx.core.reshape
+****************
+
+reshape(a: array, /, shape: Sequence[int], *, stream: None | Stream | Device = None) -> array
+
+   Reshape an array while preserving the size.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **shape** (*tuple**(**int**)*) -- New shape.
+
+      * **stream** (*Stream**, **optional*) -- Stream or device.
+        Defaults to "None" in which case the default stream of the
+        default device is used.
+
+   Returns:
+      The reshaped array.
+
+   Return type:
+      *array*

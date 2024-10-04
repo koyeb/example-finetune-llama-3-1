@@ -1,0 +1,20 @@
+mlx.core.save_gguf
+******************
+
+save_gguf(file: str, arrays: Dict[str, array], metadata: Dict[str, array | str | List[str]])
+
+   Save array(s) to a binary file in ".gguf" format.
+
+   See the GGUF documentation for more information on the format.
+
+   Parameters:
+      * **file** (*file**, **str*) -- File in which the array is
+        saved.
+
+      * **arrays** (*dict**(**str**, **array**)*) -- The dictionary of
+        names to arrays to be saved.
+
+      * **metadata** (*dict**(**str**, **Union**[**array**, **str**,
+        **list**(**str**)**]**)*) -- The dictionary of metadata to be
+        saved. The values can be a scalar or 1D obj:*array*, a "str",
+        or a "list" of "str".

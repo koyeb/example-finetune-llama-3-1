@@ -1,0 +1,17 @@
+mlx.core.logical_or
+*******************
+
+logical_or(a: array, b: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise logical or.
+
+   Parameters:
+      * **a** (*array*) -- First input array or scalar.
+
+      * **b** (*array*) -- Second input array or scalar.
+
+   Returns:
+      The boolean array containing the logical or of "a" and "b".
+
+   Return type:
+      *array*

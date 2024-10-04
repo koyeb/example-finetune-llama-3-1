@@ -1,0 +1,15 @@
+mlx.core.radians
+****************
+
+radians(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Convert angles from degrees to radians.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The angles in radians.
+
+   Return type:
+      *array*

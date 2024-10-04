@@ -1,0 +1,15 @@
+mlx.core.sinh
+*************
+
+sinh(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise hyperbolic sine.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The hyperbolic sine of "a".
+
+   Return type:
+      *array*

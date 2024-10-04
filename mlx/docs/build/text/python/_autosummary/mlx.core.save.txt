@@ -1,0 +1,11 @@
+mlx.core.save
+*************
+
+save(file: str, arr: array) -> None
+
+   Save the array to a binary file in ".npy" format.
+
+   Parameters:
+      * **file** (*str*) -- File to which the array is saved
+
+      * **arr** (*array*) -- Array to be saved.

@@ -1,0 +1,6 @@
+mlx.core.array.squeeze
+**********************
+
+array.squeeze(self, axis: int | Sequence[int] | None = None, *, stream: Stream | Device | None = None) -> array
+
+   See "squeeze()".

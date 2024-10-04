@@ -1,0 +1,6 @@
+mlx.core.array.T
+****************
+
+property array.T
+
+   Equivalent to calling "self.transpose()" with no arguments.

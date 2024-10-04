@@ -1,0 +1,24 @@
+mlx.core.cumsum
+***************
+
+cumsum(a: array, /, axis: int | None = None, *, reverse: bool = False, inclusive: bool = True, stream: None | Stream | Device = None) -> array
+
+   Return the cumulative sum of the elements along the given axis.
+
+   Parameters:
+      * **a** (*array*) -- Input array
+
+      * **axis** (*int**, **optional*) -- Optional axis to compute the
+        cumulative sum over. If unspecified the cumulative sum of the
+        flattened array is returned.
+
+      * **reverse** (*bool*) -- Perform the cumulative sum in reverse.
+
+      * **inclusive** (*bool*) -- The i-th element of the output
+        includes the i-th element of the input.
+
+   Returns:
+      The output array.
+
+   Return type:
+      *array*

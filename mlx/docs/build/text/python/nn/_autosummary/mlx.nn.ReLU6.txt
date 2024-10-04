@@ -1,0 +1,12 @@
+mlx.nn.ReLU6
+************
+
+class ReLU6
+
+   Applies the Rectified Linear Unit 6.
+
+   See "relu6()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

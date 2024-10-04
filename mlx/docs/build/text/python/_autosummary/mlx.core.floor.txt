@@ -1,0 +1,15 @@
+mlx.core.floor
+**************
+
+floor(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise floor.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The floor of "a".
+
+   Return type:
+      *array*

@@ -1,0 +1,21 @@
+mlx.core.identity
+*****************
+
+identity(n: int, dtype: Dtype | None = float32, *, stream: None | Stream | Device = None) -> array
+
+   Create a square identity matrix.
+
+   Parameters:
+      * **n** (*int*) -- The number of rows and columns in the output.
+
+      * **dtype** (*Dtype**, **optional*) -- Data type of the output
+        array. Defaults to float32.
+
+      * **stream** (*Stream**, **optional*) -- Stream or device.
+        Defaults to None.
+
+   Returns:
+      An identity matrix of size n x n.
+
+   Return type:
+      *array*

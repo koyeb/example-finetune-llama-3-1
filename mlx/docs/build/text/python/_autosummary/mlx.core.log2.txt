@@ -1,0 +1,15 @@
+mlx.core.log2
+*************
+
+log2(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise base-2 logarithm.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The base-2 logarithm of "a".
+
+   Return type:
+      *array*

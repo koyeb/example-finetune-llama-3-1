@@ -1,0 +1,19 @@
+mlx.core.sort
+*************
+
+sort(a: array, /, axis: None | int = -1, *, stream: None | Stream | Device = None) -> array
+
+   Returns a sorted copy of the array.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **axis** (*int** or **None**, **optional*) -- Optional axis to
+        sort over. If "None", this sorts over the flattened array. If
+        unspecified, it defaults to -1 (sorting over the last axis).
+
+   Returns:
+      The sorted array.
+
+   Return type:
+      *array*

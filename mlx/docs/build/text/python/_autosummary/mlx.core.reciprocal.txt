@@ -1,0 +1,15 @@
+mlx.core.reciprocal
+*******************
+
+reciprocal(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise reciprocal.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The reciprocal of "a".
+
+   Return type:
+      *array*

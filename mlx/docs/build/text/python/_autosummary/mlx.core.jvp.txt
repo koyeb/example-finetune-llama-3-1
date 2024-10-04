@@ -1,0 +1,29 @@
+mlx.core.jvp
+************
+
+jvp(fun: callable, primals: List[array], tangents: List[array]) -> Tuple[List[array], List[array]]
+
+   Compute the Jacobian-vector product.
+
+   This computes the product of the Jacobian of a function "fun"
+   evaluated at "primals" with the "tangents".
+
+   Parameters:
+      * **fun** (*callable*) -- A function which takes a variable
+        number of "array" and returns a single "array" or list of
+        "array".
+
+      * **primals** (*list**(**array**)*) -- A list of "array" at
+        which to evaluate the Jacobian.
+
+      * **tangents** (*list**(**array**)*) -- A list of "array" which
+        are the "vector" in the Jacobian-vector product. The
+        "tangents" should be the same in number, shape, and type as
+        the inputs of "fun" (i.e. the "primals").
+
+   Returns:
+      A list of the Jacobian-vector products which is the same in
+      number, shape, and type of the inputs to "fun".
+
+   Return type:
+      *list*(*array*)

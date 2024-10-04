@@ -1,0 +1,18 @@
+mlx.core.inner
+**************
+
+inner(a: array, b: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Ordinary inner product of vectors for 1-D arrays, in higher
+   dimensions a sum product over the last axes.
+
+   Parameters:
+      * **a** (*array*) -- Input array
+
+      * **b** (*array*) -- Input array
+
+   Returns:
+      The inner product.
+
+   Return type:
+      *array*

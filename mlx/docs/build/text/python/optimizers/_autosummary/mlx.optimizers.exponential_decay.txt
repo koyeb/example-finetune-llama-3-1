@@ -1,0 +1,23 @@
+mlx.optimizers.exponential_decay
+********************************
+
+exponential_decay(init: float, decay_rate: float) -> Callable
+
+   Make an exponential decay scheduler.
+
+   Parameters:
+      * **init** (*float*) -- Initial value.
+
+      * **decay_rate** (*float*) -- Multiplicative factor to decay by.
+
+   -[ Example ]-
+
+   >>> lr_schedule = optim.exponential_decay(1e-1, 0.9)
+   >>> optimizer = optim.SGD(learning_rate=lr_schedule)
+   >>> optimizer.learning_rate
+   array(0.1, dtype=float32)
+   >>>
+   >>> for _ in range(5): optimizer.update({}, {})
+   ...
+   >>> optimizer.learning_rate
+   array(0.06561, dtype=float32)

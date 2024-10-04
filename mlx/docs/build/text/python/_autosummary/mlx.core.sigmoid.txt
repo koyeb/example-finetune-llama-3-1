@@ -1,0 +1,19 @@
+mlx.core.sigmoid
+****************
+
+sigmoid(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise logistic sigmoid.
+
+   The logistic sigmoid function is:
+
+      \mathrm{sigmoid}(x) = \frac{1}{1 + e^{-x}}
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The logistic sigmoid of "a".
+
+   Return type:
+      *array*

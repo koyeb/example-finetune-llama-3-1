@@ -1,0 +1,53 @@
+mlx.nn.MaxPool2d
+****************
+
+class MaxPool2d(kernel_size: int | Tuple[int, int], stride: int | Tuple[int, int] | None = None, padding: int | Tuple[int, int] | None = 0)
+
+   Applies 2-dimensional max pooling.
+
+   Assuming an input of shape (N, H, W, C) and "kernel_size" is (k_H,
+   k_W), the output is a tensor of shape (N, H_{out}, W_{out}, C),
+   given by:
+
+      \begin{aligned}     \text{out}(N_i, h, w, C_j) = & \max_{m=0,
+      \ldots, k_H-1} \max_{n=0, \ldots, k_W-1} \\
+      & \text{input}(N_i, \text{stride[0]} \times h + m,
+      \text{stride[1]} \times w + n, C_j), \end{aligned}
+
+   where H_{out} = \left\lfloor\frac{H + 2 * \text{padding[0]} -
+   \text{kernel\_size[0]}}{\text{stride[0]}}\right\rfloor + 1, W_{out}
+   = \left\lfloor\frac{W + 2 * \text{padding[1]} -
+   \text{kernel\_size[1]}}{\text{stride[1]}}\right\rfloor + 1.
+
+   The parameters "kernel_size", "stride", "padding", can either be:
+
+      * a single "int" -- in which case the same value is used for
+        both the height and width axis;
+
+      * a "tuple" of two "int" s -- in which case, the first "int" is
+        used for the height axis, the second "int" for the width axis.
+
+   Parameters:
+      * **kernel_size** (*int** or **tuple**(**int**, **int**)*) --
+        The size of the pooling window.
+
+      * **stride** (*int** or **tuple**(**int**, **int**)**,
+        **optional*) -- The stride of the pooling window. Default:
+        "kernel_size".
+
+      * **padding** (*int** or **tuple**(**int**, **int**)**,
+        **optional*) -- How much negative infinity padding to apply to
+        the input. The padding is applied on both sides of the height
+        and width axis. Default: "0".
+
+   -[ Examples ]-
+
+   >>> import mlx.core as mx
+   >>> import mlx.nn.layers as nn
+   >>> x = mx.random.normal(shape=(8, 32, 32, 4))
+   >>> pool = nn.MaxPool2d(kernel_size=2, stride=2)
+   >>> pool(x)
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

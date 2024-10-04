@@ -1,0 +1,12 @@
+mlx.nn.Softplus
+***************
+
+class Softplus
+
+   Applies the Softplus function.
+
+   See "softplus()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

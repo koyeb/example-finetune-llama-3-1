@@ -1,0 +1,22 @@
+mlx.core.sum
+************
+
+sum(a: array, /, axis: None | int | Sequence[int] = None, keepdims: bool = False, *, stream: None | Stream | Device = None) -> array
+
+   Sum reduce the array over the given axes.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **axis** (*int** or **list**(**int**)**, **optional*) --
+        Optional axis or axes to reduce over. If unspecified this
+        defaults to reducing over the entire array.
+
+      * **keepdims** (*bool**, **optional*) -- Keep reduced axes as
+        singleton dimensions, defaults to *False*.
+
+   Returns:
+      The output array with the corresponding axes reduced.
+
+   Return type:
+      *array*

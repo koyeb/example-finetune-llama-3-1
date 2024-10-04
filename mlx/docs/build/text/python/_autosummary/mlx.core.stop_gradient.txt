@@ -1,0 +1,18 @@
+mlx.core.stop_gradient
+**********************
+
+stop_gradient(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Stop gradients from being computed.
+
+   The operation is the identity but it prevents gradients from
+   flowing through the array.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The unchanged input "a" but without gradient flowing through it.
+
+   Return type:
+      *array*

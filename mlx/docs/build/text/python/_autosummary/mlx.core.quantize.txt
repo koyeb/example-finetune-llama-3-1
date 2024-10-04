@@ -1,0 +1,58 @@
+mlx.core.quantize
+*****************
+
+quantize(w: array, /, group_size: int = 64, bits: int = 4, *, stream: None | Stream | Device = None) -> Tuple[array, array, array]
+
+   Quantize the matrix "w" using "bits" bits per element.
+
+   Note, every "group_size" elements in a row of "w" are quantized
+   together. Hence, number of columns of "w" should be divisible by
+   "group_size". In particular, the rows of "w" are divided into
+   groups of size "group_size" which are quantized together.
+
+   Warning:
+
+     "quantize" currently only supports 2D inputs with dimensions
+     which are multiples of 32
+
+   Formally, for a group of g consecutive elements w_1 to w_g in a row
+   of "w" we compute the quantized representation of each element
+   \hat{w_i} as follows
+
+      \begin{aligned}   \alpha &= \max_i w_i \\   \beta &= \min_i w_i
+      \\   s &= \frac{\alpha - \beta}{2^b - 1} \\   \hat{w_i} &=
+      \textrm{round}\left( \frac{w_i - \beta}{s}\right). \end{aligned}
+
+   After the above computation, \hat{w_i} fits in b bits and is packed
+   in an unsigned 32-bit integer from the lower to upper bits. For
+   instance, for 4-bit quantization we fit 8 elements in an unsigned
+   32 bit integer where the 1st element occupies the 4 least
+   significant bits, the 2nd bits 4-7 etc.
+
+   In order to be able to dequantize the elements of "w" we also need
+   to save s and \beta which are the returned "scales" and "biases"
+   respectively.
+
+   Parameters:
+      * **w** (*array*) -- Matrix to be quantized
+
+      * **group_size** (*int**, **optional*) -- The size of the group
+        in "w" that shares a scale and bias. Default: "64".
+
+      * **bits** (*int**, **optional*) -- The number of bits occupied
+        by each element of "w" in the returned quantized matrix.
+        Default: "4".
+
+   Returns:
+      A tuple containing
+
+      * w_q (array): The quantized version of "w"
+
+      * scales (array): The scale to multiply each element with,
+        namely s
+
+      * biases (array): The biases to add to each element, namely
+        \beta
+
+   Return type:
+      *tuple*

@@ -1,0 +1,33 @@
+mlx.core.dequantize
+*******************
+
+dequantize(w: array, /, scales: array, biases: array, group_size: int = 64, bits: int = 4, *, stream: None | Stream | Device = None) -> array
+
+   Dequantize the matrix "w" using the provided "scales" and "biases"
+   and the "group_size" and "bits" configuration.
+
+   Formally, given the notation in "quantize()", we compute w_i from
+   \hat{w_i} and corresponding s and \beta as follows
+
+      w_i = s \hat{w_i} - \beta
+
+   Parameters:
+      * **w** (*array*) -- Matrix to be quantized
+
+      * **scales** (*array*) -- The scales to use per "group_size"
+        elements of "w"
+
+      * **biases** (*array*) -- The biases to use per "group_size"
+        elements of "w"
+
+      * **group_size** (*int**, **optional*) -- The size of the group
+        in "w" that shares a scale and bias. Default: "64".
+
+      * **bits** (*int**, **optional*) -- The number of bits occupied
+        by each element in "w". Default: "4".
+
+   Returns:
+      The dequantized version of "w"
+
+   Return type:
+      *array*

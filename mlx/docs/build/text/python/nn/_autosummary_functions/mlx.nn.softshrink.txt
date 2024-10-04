@@ -1,0 +1,10 @@
+mlx.nn.softshrink
+*****************
+
+class softshrink(x, lambd: float = 0.5)
+
+   Applies the Softshrink activation function.
+
+      \text{softshrink}(x) = \begin{cases} x - \lambda & \text{if } x
+      > \lambda \\ x + \lambda & \text{if } x < -\lambda \\ 0 &
+      \text{otherwise} \end{cases}

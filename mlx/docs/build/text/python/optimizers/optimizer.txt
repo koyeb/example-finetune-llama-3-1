@@ -1,0 +1,51 @@
+Optimizer
+*********
+
+class Optimizer(schedulers=None)
+
+   The base class for all optimizers. It allows us to implement an
+   optimizer on a per-parameter basis and apply it to a parameter
+   tree.
+
+   -[ Attributes ]-
+
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Optimize  | The optimizer's state dictionary.                                                          |
+   | r.state"   |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+
+   * mlx.optimizers.Optimizer.state
+
+     * "Optimizer.state"
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Optimize  | Apply the gradients to the parameters and return the updated parameters.                   |
+   | r.apply_g  |                                                                                            |
+   | radients"  |                                                                                            |
+   | (gradient  |                                                                                            |
+   | s, parame  |                                                                                            |
+   | ters)      |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Optimize  | Initialize the optimizer's state                                                           |
+   | r.init"(p  |                                                                                            |
+   | arameters) |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Optimize  | Apply the gradients to the parameters of the model and update the model with the new       |
+   | r.update"  | parameters.                                                                                |
+   | (model,    |                                                                                            |
+   | gradients) |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+
+   * mlx.optimizers.Optimizer.apply_gradients
+
+     * "Optimizer.apply_gradients()"
+
+   * mlx.optimizers.Optimizer.init
+
+     * "Optimizer.init()"
+
+   * mlx.optimizers.Optimizer.update
+
+     * "Optimizer.update()"

@@ -1,0 +1,22 @@
+mlx.core.random.gumbel
+**********************
+
+gumbel(shape: Sequence[int] = [], dtype: Dtype | None = float32, stream: array | None = None, key: None | Stream | Device = None) -> array
+
+   Sample from the standard Gumbel distribution.
+
+   The values are sampled from a standard Gumbel distribution which
+   CDF "exp(-exp(-x))".
+
+   Parameters:
+      * **shape** (*list**(**int**)*) -- The shape of the output.
+
+      * **key** (*array**, **optional*) -- A PRNG key. Default:
+        "None".
+
+   Returns:
+      The "array" with shape "shape" and
+         distributed according to the Gumbel distribution
+
+   Return type:
+      *array*

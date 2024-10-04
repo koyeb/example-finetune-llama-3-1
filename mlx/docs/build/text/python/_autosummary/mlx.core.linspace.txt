@@ -1,0 +1,23 @@
+mlx.core.linspace
+*****************
+
+linspace(start, stop, num: int | None = 50, dtype: Dtype | None = float32, stream: None | Stream | Device = None) -> array
+
+   Generate "num" evenly spaced numbers over interval "[start, stop]".
+
+   Parameters:
+      * **start** (*scalar*) -- Starting value.
+
+      * **stop** (*scalar*) -- Stopping value.
+
+      * **num** (*int**, **optional*) -- Number of samples, defaults
+        to "50".
+
+      * **dtype** (*Dtype**, **optional*) -- Specifies the data type
+        of the output, default to "float32".
+
+   Returns:
+      The range of values.
+
+   Return type:
+      *array*

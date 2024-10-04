@@ -1,0 +1,12 @@
+mlx.nn.Softsign
+***************
+
+class Softsign
+
+   Applies the Softsign function.
+
+   See "softsign()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

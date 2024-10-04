@@ -1,0 +1,23 @@
+mlx.core.topk
+*************
+
+topk(a: array, /, k: int, axis: None | int = -1, *, stream: None | Stream | Device = None) -> array
+
+   Returns the "k" largest elements from the input along a given axis.
+
+   The elements will not necessarily be in sorted order.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **k** (*int*) -- "k" top elements to be returned
+
+      * **axis** (*int** or **None**, **optional*) -- Optional axis to
+        select over. If "None", this selects the top "k" elements over
+        the flattened array. If unspecified, it defaults to "-1".
+
+   Returns:
+      The top "k" elements from the input.
+
+   Return type:
+      *array*

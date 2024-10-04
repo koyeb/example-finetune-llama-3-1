@@ -1,0 +1,151 @@
+Random
+******
+
+Random sampling functions in MLX use an implicit global PRNG state by
+default. However, all function take an optional "key" keyword argument
+for when more fine-grained control or explicit state management is
+needed.
+
+For example, you can generate random numbers with:
+
+   for _ in range(3):
+     print(mx.random.uniform())
+
+which will print a sequence of unique pseudo random numbers.
+Alternatively you can explicitly set the key:
+
+   key = mx.random.key(0)
+   for _ in range(3):
+     print(mx.random.uniform(key=key))
+
+which will yield the same pseudo random number at each iteration.
+
+Following JAX's PRNG design we use a splittable version of Threefry,
+which is a counter-based PRNG.
+
++------------+--------------------------------------------------------------------------------------------+
+| "bernoull  | Generate Bernoulli random values.                                                          |
+| i"([p,     |                                                                                            |
+| shape,     |                                                                                            |
+| key,       |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "categori  | Sample from a categorical distribution.                                                    |
+| cal"(logi  |                                                                                            |
+| ts[, axis, |                                                                                            |
+| shape,     |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "gumbel"(  | Sample from the standard Gumbel distribution.                                              |
+| [shape,    |                                                                                            |
+| dtype,     |                                                                                            |
+| stream,    |                                                                                            |
+| key])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "key"(see  | Get a PRNG key from a seed.                                                                |
+| d)         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "normal"(  | Generate normally distributed random numbers.                                              |
+| [shape,    |                                                                                            |
+| dtype,     |                                                                                            |
+| loc,       |                                                                                            |
+| scale,     |                                                                                            |
+| key,       |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "multivar  | Generate jointly-normal random samples given a mean and covariance.                        |
+| iate_norm  |                                                                                            |
+| al"(mean,  |                                                                                            |
+| cov[,      |                                                                                            |
+| shape,     |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "randint"  | Generate random integers from the given interval.                                          |
+| (low,      |                                                                                            |
+| high[,     |                                                                                            |
+| shape,     |                                                                                            |
+| dtype,     |                                                                                            |
+| key,       |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "seed"(se  | Seed the global PRNG.                                                                      |
+| ed)        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "split"(k  | Split a PRNG key into sub keys.                                                            |
+| ey, num,   |                                                                                            |
+| stream,    |                                                                                            |
+| Stream,    |                                                                                            |
+| Device] =  |                                                                                            |
+| None)      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "truncate  | Generate values from a truncated normal distribution.                                      |
+| d_normal"  |                                                                                            |
+| (lower,    |                                                                                            |
+| array],    |                                                                                            |
+| upper,     |                                                                                            |
+| ...)       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "uniform"  | Generate uniformly distributed random numbers.                                             |
+| ([low,     |                                                                                            |
+| high,      |                                                                                            |
+| shape,     |                                                                                            |
+| dtype,     |                                                                                            |
+| key,       |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "laplace"  | Sample numbers from a Laplace distribution.                                                |
+| ([shape,   |                                                                                            |
+| dtype,     |                                                                                            |
+| loc,       |                                                                                            |
+| scale,     |                                                                                            |
+| key,       |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.random.bernoulli
+
+  * "bernoulli()"
+
+* mlx.core.random.categorical
+
+  * "categorical()"
+
+* mlx.core.random.gumbel
+
+  * "gumbel()"
+
+* mlx.core.random.key
+
+  * "key()"
+
+* mlx.core.random.normal
+
+  * "normal()"
+
+* mlx.core.random.multivariate_normal
+
+  * "multivariate_normal()"
+
+* mlx.core.random.randint
+
+  * "randint()"
+
+* mlx.core.random.seed
+
+  * "seed()"
+
+* mlx.core.random.split
+
+  * "split()"
+
+* mlx.core.random.truncated_normal
+
+  * "truncated_normal()"
+
+* mlx.core.random.uniform
+
+  * "uniform()"
+
+* mlx.core.random.laplace
+
+  * "laplace()"

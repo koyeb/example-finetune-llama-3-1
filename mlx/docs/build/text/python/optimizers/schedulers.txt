@@ -1,0 +1,52 @@
+Schedulers
+**********
+
++------------+--------------------------------------------------------------------------------------------+
+| "cosine_d  | Make a cosine decay scheduler.                                                             |
+| ecay"(ini  |                                                                                            |
+| t, decay_  |                                                                                            |
+| steps[,    |                                                                                            |
+| end])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "exponent  | Make an exponential decay scheduler.                                                       |
+| ial_decay  |                                                                                            |
+| "(init, d  |                                                                                            |
+| ecay_rate) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "join_sch  | Join multiple schedules to create a new schedule.                                          |
+| edules"(s  |                                                                                            |
+| chedules,  |                                                                                            |
+| boundarie  |                                                                                            |
+| s)         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "linear_s  | Make a linear scheduler.                                                                   |
+| chedule"(  |                                                                                            |
+| init, end, |                                                                                            |
+| steps)     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "step_dec  | Make a step decay scheduler.                                                               |
+| ay"(init,  |                                                                                            |
+| decay_rat  |                                                                                            |
+| e,         |                                                                                            |
+| step_size) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.optimizers.cosine_decay
+
+  * "cosine_decay()"
+
+* mlx.optimizers.exponential_decay
+
+  * "exponential_decay()"
+
+* mlx.optimizers.join_schedules
+
+  * "join_schedules()"
+
+* mlx.optimizers.linear_schedule
+
+  * "linear_schedule()"
+
+* mlx.optimizers.step_decay
+
+  * "step_decay()"

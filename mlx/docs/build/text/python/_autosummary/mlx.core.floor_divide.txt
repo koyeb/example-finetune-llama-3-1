@@ -1,0 +1,20 @@
+mlx.core.floor_divide
+*********************
+
+floor_divide(a: scalar | array, b: scalar | array, stream: None | Stream | Device = None) -> array
+
+   Element-wise integer division.
+
+   If either array is a floating point type then it is equivalent to
+   calling "floor()" after "divide()".
+
+   Parameters:
+      * **a** (*array*) -- Input array or scalar.
+
+      * **b** (*array*) -- Input array or scalar.
+
+   Returns:
+      The quotient "a // b".
+
+   Return type:
+      *array*

@@ -1,0 +1,32 @@
+mlx.core.random.uniform
+***********************
+
+uniform(low: scalar | array = 0, high: scalar | array = 1, shape: Sequence[int] = [], dtype: Dtype | None = float32, key: array | None = None, stream: None | Stream | Device = None) -> array
+
+   Generate uniformly distributed random numbers.
+
+   The values are sampled uniformly in the half-open interval "[low,
+   high)". The lower and upper bound can be scalars or arrays and must
+   be broadcastable to "shape".
+
+   Parameters:
+      * **low** (*scalar** or **array**, **optional*) -- Lower bound
+        of the distribution. Default: "0".
+
+      * **high** (*scalar** or **array**, **optional*) -- Upper bound
+        of the distribution. Default: "1".
+
+      * **shape** (*list**(**int**)**, **optional*) -- Shape of the
+        output. Default:"()".
+
+      * **dtype** (*Dtype**, **optional*) -- Type of the output.
+        Default: "float32".
+
+      * **key** (*array**, **optional*) -- A PRNG key. Default:
+        "None".
+
+   Returns:
+      The output array random values.
+
+   Return type:
+      *array*

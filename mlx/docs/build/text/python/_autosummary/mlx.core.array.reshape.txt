@@ -1,0 +1,9 @@
+mlx.core.array.reshape
+**********************
+
+array.reshape(self, *shape, stream: Stream | Device | None = None) -> array
+
+   Equivalent to "reshape()" but the shape can be passed either as a
+   "tuple" or as separate arguments.
+
+   See "reshape()" for full documentation.

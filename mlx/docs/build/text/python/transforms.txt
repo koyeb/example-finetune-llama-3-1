@@ -1,0 +1,90 @@
+Transforms
+**********
+
++------------+--------------------------------------------------------------------------------------------+
+| "eval"(*a  | Evaluate an "array" or tree of "array".                                                    |
+| rgs)       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "compile"  | Returns a compiled function which produces the same output as "fun".                       |
+| (fun[,     |                                                                                            |
+| inputs,    |                                                                                            |
+| outputs,   |                                                                                            |
+| shapeless  |                                                                                            |
+| ])         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "custom_f  | Set up a function for custom gradient and vmap definitions.                                |
+| unction"   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "disable_  | Globally disable compilation.                                                              |
+| compile"() |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "enable_c  | Globally enable compilation.                                                               |
+| ompile"()  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "grad"(fu  | Returns a function which computes the gradient of "fun".                                   |
+| n[,        |                                                                                            |
+| argnums,   |                                                                                            |
+| argnames]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "value_an  | Returns a function which computes the value and gradient of "fun".                         |
+| d_grad"(f  |                                                                                            |
+| un[,       |                                                                                            |
+| argnums,   |                                                                                            |
+| argnames]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "jvp"(fun, | Compute the Jacobian-vector product.                                                       |
+| primals,   |                                                                                            |
+| tangents)  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "vjp"(fun, | Compute the vector-Jacobian product.                                                       |
+| primals,   |                                                                                            |
+| cotangent  |                                                                                            |
+| s)         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "vmap"(fu  | Returns a vectorized version of "fun".                                                     |
+| n[,        |                                                                                            |
+| in_axes,   |                                                                                            |
+| out_axes]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.eval
+
+  * "eval()"
+
+* mlx.core.compile
+
+  * "compile()"
+
+* mlx.core.custom_function
+
+  * "custom_function"
+
+    * "custom_function.__init__()"
+
+* mlx.core.disable_compile
+
+  * "disable_compile()"
+
+* mlx.core.enable_compile
+
+  * "enable_compile()"
+
+* mlx.core.grad
+
+  * "grad()"
+
+* mlx.core.value_and_grad
+
+  * "value_and_grad()"
+
+* mlx.core.jvp
+
+  * "jvp()"
+
+* mlx.core.vjp
+
+  * "vjp()"
+
+* mlx.core.vmap
+
+  * "vmap()"

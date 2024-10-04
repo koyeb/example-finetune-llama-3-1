@@ -1,0 +1,12 @@
+mlx.nn.Softmax
+**************
+
+class Softmax
+
+   Applies the Softmax function.
+
+   See "softmax()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

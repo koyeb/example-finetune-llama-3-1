@@ -1,0 +1,6 @@
+mlx.core.default_stream
+***********************
+
+default_stream(device: Device) -> Stream
+
+   Get the device's default stream.

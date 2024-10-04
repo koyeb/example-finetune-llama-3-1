@@ -1,0 +1,22 @@
+mlx.nn.Module.update_modules
+****************************
+
+Module.update_modules(modules: dict) -> Module
+
+   Replace the child modules of this "Module" instance with the
+   provided ones in the dict of dicts and lists.
+
+   It is the equivalent of "Module.update()" but for modules instead
+   of parameters and allows us to flexibly edit complex architectures
+   by programmatically swapping layers.
+
+   The passed in parameters dictionary need not be a full dictionary
+   similar to "parameters()". Only the provided locations will be
+   updated.
+
+   Parameters:
+      **modules** (*dict*) -- A complete or partial dictionary of the
+      modules submodules.
+
+   Returns:
+      The module instance after updating the submodules.

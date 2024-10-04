@@ -1,0 +1,15 @@
+mlx.core.log10
+**************
+
+log10(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise base-10 logarithm.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The base-10 logarithm of "a".
+
+   Return type:
+      *array*

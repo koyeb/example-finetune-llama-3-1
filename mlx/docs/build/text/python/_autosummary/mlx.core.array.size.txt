@@ -1,0 +1,6 @@
+mlx.core.array.size
+*******************
+
+property array.size
+
+   Number of elements in the array.

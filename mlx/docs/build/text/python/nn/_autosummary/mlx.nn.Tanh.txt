@@ -1,0 +1,12 @@
+mlx.nn.Tanh
+***********
+
+class Tanh
+
+   Applies the hyperbolic tangent function.
+
+   See "tanh()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

@@ -1,0 +1,12 @@
+mlx.nn.Softmin
+**************
+
+class Softmin
+
+   Applies the Softmin function.
+
+   See "softmin()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

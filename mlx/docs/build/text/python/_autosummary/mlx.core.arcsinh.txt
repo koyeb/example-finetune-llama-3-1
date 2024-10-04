@@ -1,0 +1,15 @@
+mlx.core.arcsinh
+****************
+
+arcsinh(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise inverse hyperbolic sine.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The inverse hyperbolic sine of "a".
+
+   Return type:
+      *array*

@@ -1,0 +1,6 @@
+mlx.core.array.view
+*******************
+
+array.view(self, dtype: Dtype, *, stream: Stream | Device | None = None) -> array
+
+   See "view()".

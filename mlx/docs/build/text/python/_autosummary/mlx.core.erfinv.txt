@@ -1,0 +1,15 @@
+mlx.core.erfinv
+***************
+
+erfinv(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise inverse of "erf()".
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The inverse error function of "a".
+
+   Return type:
+      *array*

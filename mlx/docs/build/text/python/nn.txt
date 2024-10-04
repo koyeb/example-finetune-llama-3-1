@@ -1,0 +1,650 @@
+Neural Networks
+***************
+
+Writing arbitrarily complex neural networks in MLX can be done using
+only "mlx.core.array" and "mlx.core.value_and_grad()". However, this
+requires the user to write again and again the same simple neural
+network operations as well as handle all the parameter state and
+initialization manually and explicitly.
+
+The module "mlx.nn" solves this problem by providing an intuitive way
+of composing neural network layers, initializing their parameters,
+freezing them for finetuning and more.
+
+
+Quick Start with Neural Networks
+================================
+
+   import mlx.core as mx
+   import mlx.nn as nn
+
+   class MLP(nn.Module):
+       def __init__(self, in_dims: int, out_dims: int):
+           super().__init__()
+
+           self.layers = [
+               nn.Linear(in_dims, 128),
+               nn.Linear(128, 128),
+               nn.Linear(128, out_dims),
+           ]
+
+       def __call__(self, x):
+           for i, l in enumerate(self.layers):
+               x = mx.maximum(x, 0) if i > 0 else x
+               x = l(x)
+           return x
+
+   # The model is created with all its parameters but nothing is initialized
+   # yet because MLX is lazily evaluated
+   mlp = MLP(2, 10)
+
+   # We can access its parameters by calling mlp.parameters()
+   params = mlp.parameters()
+   print(params["layers"][0]["weight"].shape)
+
+   # Printing a parameter will cause it to be evaluated and thus initialized
+   print(params["layers"][0])
+
+   # We can also force evaluate all parameters to initialize the model
+   mx.eval(mlp.parameters())
+
+   # A simple loss function.
+   # NOTE: It doesn't matter how it uses the mlp model. It currently captures
+   #       it from the local scope. It could be a positional argument or a
+   #       keyword argument.
+   def l2_loss(x, y):
+       y_hat = mlp(x)
+       return (y_hat - y).square().mean()
+
+   # Calling `nn.value_and_grad` instead of `mx.value_and_grad` returns the
+   # gradient with respect to `mlp.trainable_parameters()`
+   loss_and_grad = nn.value_and_grad(mlp, l2_loss)
+
+
+The Module Class
+================
+
+The workhorse of any neural network library is the "Module" class. In
+MLX the "Module" class is a container of "mlx.core.array" or "Module"
+instances. Its main function is to provide a way to recursively
+**access** and **update** its parameters and those of its submodules.
+
+
+Parameters
+----------
+
+A parameter of a module is any public member of type "mlx.core.array"
+(its name should not start with "_"). It can be arbitrarily nested in
+other "Module" instances or lists and dictionaries.
+
+"Module.parameters()" can be used to extract a nested dictionary with
+all the parameters of a module and its submodules.
+
+A "Module" can also keep track of "frozen" parameters. See the
+"Module.freeze()" method for more details. "mlx.nn.value_and_grad()"
+the gradients returned will be with respect to these trainable
+parameters.
+
+
+Updating the Parameters
+-----------------------
+
+MLX modules allow accessing and updating individual parameters.
+However, most times we need to update large subsets of a module's
+parameters. This action is performed by "Module.update()".
+
+
+Inspecting Modules
+------------------
+
+The simplest way to see the model architecture is to print it.
+Following along with the above example, you can print the "MLP" with:
+
+   print(mlp)
+
+This will display:
+
+   MLP(
+     (layers.0): Linear(input_dims=2, output_dims=128, bias=True)
+     (layers.1): Linear(input_dims=128, output_dims=128, bias=True)
+     (layers.2): Linear(input_dims=128, output_dims=10, bias=True)
+   )
+
+To get more detailed information on the arrays in a "Module" you can
+use "mlx.utils.tree_map()" on the parameters. For example, to see the
+shapes of all the parameters in a "Module" do:
+
+   from mlx.utils import tree_map
+   shapes = tree_map(lambda p: p.shape, mlp.parameters())
+
+As another example, you can count the number of parameters in a
+"Module" with:
+
+   from mlx.utils import tree_flatten
+   num_params = sum(v.size for _, v in tree_flatten(mlp.parameters()))
+
+
+Value and Grad
+==============
+
+Using a "Module" does not preclude using MLX's high order function
+transformations ("mlx.core.value_and_grad()", "mlx.core.grad()",
+etc.). However, these function transformations assume pure functions,
+namely the parameters should be passed as an argument to the function
+being transformed.
+
+There is an easy pattern to achieve that with MLX modules
+
+   model = ...
+
+   def f(params, other_inputs):
+       model.update(params)  # <---- Necessary to make the model use the passed parameters
+       return model(other_inputs)
+
+   f(model.trainable_parameters(), mx.zeros((10,)))
+
+However, "mlx.nn.value_and_grad()" provides precisely this pattern and
+only computes the gradients with respect to the trainable parameters
+of the model.
+
+In detail:
+
+* it wraps the passed function with a function that calls
+  "Module.update()" to make sure the model is using the provided
+  parameters.
+
+* it calls "mlx.core.value_and_grad()" to transform the function into
+  a function that also computes the gradients with respect to the
+  passed parameters.
+
+* it wraps the returned function with a function that passes the
+  trainable parameters as the first argument to the function returned
+  by "mlx.core.value_and_grad()"
+
++------------+--------------------------------------------------------------------------------------------+
+| "value_an  | Transform the passed function "fn" to a function that computes the gradients of "fn" wrt   |
+| d_grad"(m  | the model's trainable parameters and also its value.                                       |
+| odel, fn)  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "quantize  | Quantize the sub-modules of a module according to a predicate.                             |
+| "(model[,  |                                                                                            |
+| group_siz  |                                                                                            |
+| e, bits,   |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.nn.value_and_grad
+
+  * "value_and_grad()"
+
+* mlx.nn.quantize
+
+  * "quantize()"
+
+* Module
+
+  * "Module"
+
+  * mlx.nn.Module.training
+
+    * "Module.training"
+
+  * mlx.nn.Module.state
+
+    * "Module.state"
+
+  * mlx.nn.Module.apply
+
+    * "Module.apply()"
+
+  * mlx.nn.Module.apply_to_modules
+
+    * "Module.apply_to_modules()"
+
+  * mlx.nn.Module.children
+
+    * "Module.children()"
+
+  * mlx.nn.Module.eval
+
+    * "Module.eval()"
+
+  * mlx.nn.Module.filter_and_map
+
+    * "Module.filter_and_map()"
+
+  * mlx.nn.Module.freeze
+
+    * "Module.freeze()"
+
+  * mlx.nn.Module.leaf_modules
+
+    * "Module.leaf_modules()"
+
+  * mlx.nn.Module.load_weights
+
+    * "Module.load_weights()"
+
+  * mlx.nn.Module.modules
+
+    * "Module.modules()"
+
+  * mlx.nn.Module.named_modules
+
+    * "Module.named_modules()"
+
+  * mlx.nn.Module.parameters
+
+    * "Module.parameters()"
+
+  * mlx.nn.Module.save_weights
+
+    * "Module.save_weights()"
+
+  * mlx.nn.Module.set_dtype
+
+    * "Module.set_dtype()"
+
+  * mlx.nn.Module.train
+
+    * "Module.train()"
+
+  * mlx.nn.Module.trainable_parameters
+
+    * "Module.trainable_parameters()"
+
+  * mlx.nn.Module.unfreeze
+
+    * "Module.unfreeze()"
+
+  * mlx.nn.Module.update
+
+    * "Module.update()"
+
+  * mlx.nn.Module.update_modules
+
+    * "Module.update_modules()"
+
+* Layers
+
+  * mlx.nn.ALiBi
+
+    * "ALiBi"
+
+  * mlx.nn.AvgPool1d
+
+    * "AvgPool1d"
+
+  * mlx.nn.AvgPool2d
+
+    * "AvgPool2d"
+
+  * mlx.nn.BatchNorm
+
+    * "BatchNorm"
+
+  * mlx.nn.Conv1d
+
+    * "Conv1d"
+
+  * mlx.nn.Conv2d
+
+    * "Conv2d"
+
+  * mlx.nn.Conv3d
+
+    * "Conv3d"
+
+  * mlx.nn.Dropout
+
+    * "Dropout"
+
+  * mlx.nn.Dropout2d
+
+    * "Dropout2d"
+
+  * mlx.nn.Dropout3d
+
+    * "Dropout3d"
+
+  * mlx.nn.Embedding
+
+    * "Embedding"
+
+  * mlx.nn.GELU
+
+    * "GELU"
+
+  * mlx.nn.GLU
+
+    * "GLU"
+
+  * mlx.nn.GroupNorm
+
+    * "GroupNorm"
+
+  * mlx.nn.GRU
+
+    * "GRU"
+
+  * mlx.nn.HardShrink
+
+    * "HardShrink"
+
+  * mlx.nn.HardTanh
+
+    * "HardTanh"
+
+  * mlx.nn.Hardswish
+
+    * "Hardswish"
+
+  * mlx.nn.InstanceNorm
+
+    * "InstanceNorm"
+
+  * mlx.nn.LayerNorm
+
+    * "LayerNorm"
+
+  * mlx.nn.LeakyReLU
+
+    * "LeakyReLU"
+
+  * mlx.nn.Linear
+
+    * "Linear"
+
+  * mlx.nn.LSTM
+
+    * "LSTM"
+
+  * mlx.nn.MaxPool1d
+
+    * "MaxPool1d"
+
+  * mlx.nn.MaxPool2d
+
+    * "MaxPool2d"
+
+  * mlx.nn.Mish
+
+    * "Mish"
+
+  * mlx.nn.MultiHeadAttention
+
+    * "MultiHeadAttention"
+
+  * mlx.nn.PReLU
+
+    * "PReLU"
+
+  * mlx.nn.QuantizedEmbedding
+
+    * "QuantizedEmbedding"
+
+  * mlx.nn.QuantizedLinear
+
+    * "QuantizedLinear"
+
+  * mlx.nn.RMSNorm
+
+    * "RMSNorm"
+
+  * mlx.nn.ReLU
+
+    * "ReLU"
+
+  * mlx.nn.ReLU6
+
+    * "ReLU6"
+
+  * mlx.nn.RNN
+
+    * "RNN"
+
+  * mlx.nn.RoPE
+
+    * "RoPE"
+
+  * mlx.nn.SELU
+
+    * "SELU"
+
+  * mlx.nn.Sequential
+
+    * "Sequential"
+
+  * mlx.nn.SiLU
+
+    * "SiLU"
+
+  * mlx.nn.SinusoidalPositionalEncoding
+
+    * "SinusoidalPositionalEncoding"
+
+  * mlx.nn.Softmin
+
+    * "Softmin"
+
+  * mlx.nn.Softshrink
+
+    * "Softshrink"
+
+  * mlx.nn.Softsign
+
+    * "Softsign"
+
+  * mlx.nn.Softmax
+
+    * "Softmax"
+
+  * mlx.nn.Softplus
+
+    * "Softplus"
+
+  * mlx.nn.Step
+
+    * "Step"
+
+  * mlx.nn.Tanh
+
+    * "Tanh"
+
+  * mlx.nn.Transformer
+
+    * "Transformer"
+
+  * mlx.nn.Upsample
+
+    * "Upsample"
+
+* Functions
+
+  * mlx.nn.elu
+
+    * "elu"
+
+  * mlx.nn.gelu
+
+    * "gelu"
+
+  * mlx.nn.gelu_approx
+
+    * "gelu_approx"
+
+  * mlx.nn.gelu_fast_approx
+
+    * "gelu_fast_approx"
+
+  * mlx.nn.glu
+
+    * "glu"
+
+  * mlx.nn.hard_shrink
+
+    * "hard_shrink"
+
+  * mlx.nn.hard_tanh
+
+    * "hard_tanh"
+
+  * mlx.nn.hardswish
+
+    * "hardswish"
+
+  * mlx.nn.leaky_relu
+
+    * "leaky_relu"
+
+  * mlx.nn.log_sigmoid
+
+    * "log_sigmoid"
+
+  * mlx.nn.log_softmax
+
+    * "log_softmax"
+
+  * mlx.nn.mish
+
+    * "mish"
+
+  * mlx.nn.prelu
+
+    * "prelu"
+
+  * mlx.nn.relu
+
+    * "relu"
+
+  * mlx.nn.relu6
+
+    * "relu6"
+
+  * mlx.nn.selu
+
+    * "selu"
+
+  * mlx.nn.sigmoid
+
+    * "sigmoid"
+
+  * mlx.nn.silu
+
+    * "silu"
+
+  * mlx.nn.softmax
+
+    * "softmax"
+
+  * mlx.nn.softmin
+
+    * "softmin"
+
+  * mlx.nn.softplus
+
+    * "softplus"
+
+  * mlx.nn.softshrink
+
+    * "softshrink"
+
+  * mlx.nn.step
+
+    * "step"
+
+  * mlx.nn.tanh
+
+    * "tanh"
+
+* Loss Functions
+
+  * mlx.nn.losses.binary_cross_entropy
+
+    * "binary_cross_entropy"
+
+  * mlx.nn.losses.cosine_similarity_loss
+
+    * "cosine_similarity_loss"
+
+  * mlx.nn.losses.cross_entropy
+
+    * "cross_entropy"
+
+  * mlx.nn.losses.gaussian_nll_loss
+
+    * "gaussian_nll_loss"
+
+  * mlx.nn.losses.hinge_loss
+
+    * "hinge_loss"
+
+  * mlx.nn.losses.huber_loss
+
+    * "huber_loss"
+
+  * mlx.nn.losses.kl_div_loss
+
+    * "kl_div_loss"
+
+  * mlx.nn.losses.l1_loss
+
+    * "l1_loss"
+
+  * mlx.nn.losses.log_cosh_loss
+
+    * "log_cosh_loss"
+
+  * mlx.nn.losses.margin_ranking_loss
+
+    * "margin_ranking_loss"
+
+  * mlx.nn.losses.mse_loss
+
+    * "mse_loss"
+
+  * mlx.nn.losses.nll_loss
+
+    * "nll_loss"
+
+  * mlx.nn.losses.smooth_l1_loss
+
+    * "smooth_l1_loss"
+
+  * mlx.nn.losses.triplet_loss
+
+    * "triplet_loss"
+
+* Initializers
+
+  * mlx.nn.init.constant
+
+    * "constant()"
+
+  * mlx.nn.init.normal
+
+    * "normal()"
+
+  * mlx.nn.init.uniform
+
+    * "uniform()"
+
+  * mlx.nn.init.identity
+
+    * "identity()"
+
+  * mlx.nn.init.glorot_normal
+
+    * "glorot_normal()"
+
+  * mlx.nn.init.glorot_uniform
+
+    * "glorot_uniform()"
+
+  * mlx.nn.init.he_normal
+
+    * "he_normal()"
+
+  * mlx.nn.init.he_uniform
+
+    * "he_uniform()"

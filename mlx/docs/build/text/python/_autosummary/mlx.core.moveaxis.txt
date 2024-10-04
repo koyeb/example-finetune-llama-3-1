@@ -1,0 +1,19 @@
+mlx.core.moveaxis
+*****************
+
+moveaxis(a: array, /, source: int, destination: int, *, stream: None | Stream | Device = None) -> array
+
+   Move an axis to a new position.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **source** (*int*) -- Specifies the source axis.
+
+      * **destination** (*int*) -- Specifies the destination axis.
+
+   Returns:
+      The array with the axis moved.
+
+   Return type:
+      *array*

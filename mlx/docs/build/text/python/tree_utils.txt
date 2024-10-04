@@ -1,0 +1,63 @@
+Tree Utils
+**********
+
+In MLX we consider a python tree to be an arbitrarily nested
+collection of dictionaries, lists and tuples without cycles. Functions
+in this module that return python trees will be using the default
+python "dict", "list" and "tuple" but they can usually process objects
+that inherit from any of these.
+
+Note:
+
+  Dictionaries should have keys that are valid python identifiers.
+
++------------+--------------------------------------------------------------------------------------------+
+| "tree_fla  | Flattens a Python tree to a list of key, value tuples.                                     |
+| tten"(tre  |                                                                                            |
+| e[,        |                                                                                            |
+| prefix,    |                                                                                            |
+| is_leaf])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "tree_unf  | Recreate a Python tree from its flat representation.                                       |
+| latten"(t  |                                                                                            |
+| ree)       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "tree_map  | Applies "fn" to the leaves of the Python tree "tree" and returns a new collection with the |
+| "(fn,      | results.                                                                                   |
+| tree,      |                                                                                            |
+| *rest[,    |                                                                                            |
+| is_leaf])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "tree_map  | Applies "fn" to the path and leaves of the Python tree "tree" and returns a new collection |
+| _with_pat  | with the results.                                                                          |
+| h"(fn,     |                                                                                            |
+| tree,      |                                                                                            |
+| *rest[,    |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "tree_red  | Applies a reduction to the leaves of a Python tree.                                        |
+| uce"(fn,   |                                                                                            |
+| tree[, in  |                                                                                            |
+| itializer, |                                                                                            |
+| is_leaf])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.utils.tree_flatten
+
+  * "tree_flatten()"
+
+* mlx.utils.tree_unflatten
+
+  * "tree_unflatten()"
+
+* mlx.utils.tree_map
+
+  * "tree_map()"
+
+* mlx.utils.tree_map_with_path
+
+  * "tree_map_with_path()"
+
+* mlx.utils.tree_reduce
+
+  * "tree_reduce()"

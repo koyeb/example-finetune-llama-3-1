@@ -1,0 +1,6 @@
+mlx.core.array.log1p
+********************
+
+array.log1p(self, *, stream: Stream | Device | None = None) -> array
+
+   See "log1p()".

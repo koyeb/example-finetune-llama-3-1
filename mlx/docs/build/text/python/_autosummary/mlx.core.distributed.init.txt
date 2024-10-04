@@ -1,0 +1,19 @@
+mlx.core.distributed.init
+*************************
+
+init(strict: bool = False) -> Group
+
+   Initialize the communication backend and create the global
+   communication group.
+
+   Parameters:
+      **strict** (*bool**, **optional*) -- If set to False it returns
+      a singleton group in case "mx.distributed.is_available()"
+      returns False otherwise it throws a runtime error. Default:
+      "False"
+
+   Returns:
+      The group representing all the launched processes.
+
+   Return type:
+      *Group*

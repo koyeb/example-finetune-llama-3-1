@@ -1,0 +1,12 @@
+mlx.core.set_default_stream
+***************************
+
+set_default_stream(stream: Stream) -> None
+
+   Set the default stream.
+
+   This will make the given stream the default for the streams device.
+   It will not change the default device.
+
+   Parameters:
+      **stream** (*stream*) -- Stream to make the default.

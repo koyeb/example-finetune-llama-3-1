@@ -1,0 +1,12 @@
+mlx.nn.SiLU
+***********
+
+class SiLU
+
+   Applies the Sigmoid Linear Unit. Also known as Swish.
+
+   See "silu()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

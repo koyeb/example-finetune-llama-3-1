@@ -1,0 +1,11 @@
+mlx.core.synchronize
+********************
+
+synchronize(stream: Stream | None = None) -> None
+
+   Synchronize with the given stream.
+
+   Parameters:
+      **stream** (*Stream**, **optional*) -- The stream to synchronize
+      with. If "None" then the default stream of the default device is
+      used. Default: "None".

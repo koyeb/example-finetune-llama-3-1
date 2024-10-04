@@ -1,0 +1,8 @@
+mlx.nn.softplus
+***************
+
+class softplus(x)
+
+   Applies the Softplus function.
+
+   Applies \log(1 + \exp(x)) element wise.

@@ -1,0 +1,15 @@
+mlx.core.square
+***************
+
+square(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise square.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The square of "a".
+
+   Return type:
+      *array*

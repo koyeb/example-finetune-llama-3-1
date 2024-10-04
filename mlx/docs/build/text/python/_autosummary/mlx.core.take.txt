@@ -1,0 +1,28 @@
+mlx.core.take
+*************
+
+take(a: array, /, indices: array, axis: int | None = None, *, stream: None | Stream | Device = None) -> array
+
+   Take elements along an axis.
+
+   The elements are taken from "indices" along the specified axis. If
+   the axis is not specified the array is treated as a flattened 1-D
+   array prior to performing the take.
+
+   As an example, if the "axis=1" this is equivalent to "a[:, indices,
+   ...]".
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **indices** (*array*) -- Input array with integral type.
+
+      * **axis** (*int**, **optional*) -- Axis along which to perform
+        the take. If unspecified the array is treated as a flattened
+        1-D vector.
+
+   Returns:
+      The indexed values of "a".
+
+   Return type:
+      *array*

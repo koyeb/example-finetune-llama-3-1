@@ -1,0 +1,19 @@
+mlx.core.transpose
+******************
+
+transpose(a: array, /, axes: Sequence[int] | None = None, *, stream: None | Stream | Device = None) -> array
+
+   Transpose the dimensions of the array.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **axes** (*list**(**int**)**, **optional*) -- Specifies the
+        source axis for each axis in the new array. The default is to
+        reverse the axes.
+
+   Returns:
+      The transposed array.
+
+   Return type:
+      *array*

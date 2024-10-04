@@ -1,0 +1,18 @@
+mlx.core.expand_dims
+********************
+
+expand_dims(a: array, /, axis: int | Sequence[int], *, stream: None | Stream | Device = None) -> array
+
+   Add a size one dimension at the given axis.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **axes** (*int** or **tuple**(**int**)*) -- The index of the
+        inserted dimensions.
+
+   Returns:
+      The array with inserted dimensions.
+
+   Return type:
+      *array*

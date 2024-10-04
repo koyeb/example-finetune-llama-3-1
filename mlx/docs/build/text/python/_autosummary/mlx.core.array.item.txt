@@ -1,0 +1,9 @@
+mlx.core.array.item
+*******************
+
+array.item(self) -> object
+
+   Access the value of a scalar array.
+
+   Returns:
+      Standard Python scalar.

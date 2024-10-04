@@ -1,0 +1,107 @@
+FFT
+***
+
++------------+--------------------------------------------------------------------------------------------+
+| "fft"(a[,  | One dimensional discrete Fourier Transform.                                                |
+| n, axis,   |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "ifft"(a[, | One dimensional inverse discrete Fourier Transform.                                        |
+| n, axis,   |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "fft2"(a[, | Two dimensional discrete Fourier Transform.                                                |
+| s, axes,   |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "ifft2"(a  | Two dimensional inverse discrete Fourier Transform.                                        |
+| [, s,      |                                                                                            |
+| axes,      |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "fftn"(a[, | n-dimensional discrete Fourier Transform.                                                  |
+| s, axes,   |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "ifftn"(a  | n-dimensional inverse discrete Fourier Transform.                                          |
+| [, s,      |                                                                                            |
+| axes,      |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "rfft"(a[, | One dimensional discrete Fourier Transform on a real input.                                |
+| n, axis,   |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "irfft"(a  | The inverse of "rfft()".                                                                   |
+| [, n,      |                                                                                            |
+| axis,      |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "rfft2"(a  | Two dimensional real discrete Fourier Transform.                                           |
+| [, s,      |                                                                                            |
+| axes,      |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "irfft2"(  | The inverse of "rfft2()".                                                                  |
+| a[, s,     |                                                                                            |
+| axes,      |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "rfftn"(a  | n-dimensional real discrete Fourier Transform.                                             |
+| [, s,      |                                                                                            |
+| axes,      |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "irfftn"(  | The inverse of "rfftn()".                                                                  |
+| a[, s,     |                                                                                            |
+| axes,      |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.fft.fft
+
+  * "fft()"
+
+* mlx.core.fft.ifft
+
+  * "ifft()"
+
+* mlx.core.fft.fft2
+
+  * "fft2()"
+
+* mlx.core.fft.ifft2
+
+  * "ifft2()"
+
+* mlx.core.fft.fftn
+
+  * "fftn()"
+
+* mlx.core.fft.ifftn
+
+  * "ifftn()"
+
+* mlx.core.fft.rfft
+
+  * "rfft()"
+
+* mlx.core.fft.irfft
+
+  * "irfft()"
+
+* mlx.core.fft.rfft2
+
+  * "rfft2()"
+
+* mlx.core.fft.irfft2
+
+  * "irfft2()"
+
+* mlx.core.fft.rfftn
+
+  * "rfftn()"
+
+* mlx.core.fft.irfftn
+
+  * "irfftn()"

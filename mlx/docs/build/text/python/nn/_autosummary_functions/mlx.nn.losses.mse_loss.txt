@@ -1,0 +1,21 @@
+mlx.nn.losses.mse_loss
+**********************
+
+class mse_loss(predictions: array, targets: array, reduction: Literal['none', 'mean', 'sum'] = 'mean')
+
+   Computes the mean squared error loss.
+
+   Parameters:
+      * **predictions** (*array*) -- The predicted values.
+
+      * **targets** (*array*) -- The target values.
+
+      * **reduction** (*str**, **optional*) -- Specifies the reduction
+        to apply to the output: "'none'" | "'mean'" | "'sum'".
+        Default: "'mean'".
+
+   Returns:
+      The computed mean squared error loss.
+
+   Return type:
+      *array*

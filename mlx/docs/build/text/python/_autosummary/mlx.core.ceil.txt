@@ -1,0 +1,15 @@
+mlx.core.ceil
+*************
+
+ceil(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise ceil.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The ceil of "a".
+
+   Return type:
+      *array*

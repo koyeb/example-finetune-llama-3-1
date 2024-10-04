@@ -1,0 +1,90 @@
+Data Types
+**********
+
+The default floating point type is "float32" and the default integer
+type is "int32". The table below shows supported values for "Dtype".
+
+
+Supported Data Types
+^^^^^^^^^^^^^^^^^^^^
+
++-------+-----+----------------------+
+| Type  | By  | Description          |
+|       | tes |                      |
+|=======|=====|======================|
+| "boo  | 1   | Boolean ("True",     |
+| l_"   |     | "False") data type   |
++-------+-----+----------------------+
+| "uin  | 1   | 8-bit unsigned       |
+| t8"   |     | integer              |
++-------+-----+----------------------+
+| "uin  | 2   | 16-bit unsigned      |
+| t16"  |     | integer              |
++-------+-----+----------------------+
+| "uin  | 4   | 32-bit unsigned      |
+| t32"  |     | integer              |
++-------+-----+----------------------+
+| "uin  | 8   | 64-bit unsigned      |
+| t64"  |     | integer              |
++-------+-----+----------------------+
+| "int  | 1   | 8-bit signed integer |
+| 8"    |     |                      |
++-------+-----+----------------------+
+| "int  | 2   | 16-bit signed        |
+| 16"   |     | integer              |
++-------+-----+----------------------+
+| "int  | 4   | 32-bit signed        |
+| 32"   |     | integer              |
++-------+-----+----------------------+
+| "int  | 8   | 64-bit signed        |
+| 64"   |     | integer              |
++-------+-----+----------------------+
+| "bfl  | 2   | 16-bit brain float   |
+| oat1  |     | (e8, m7)             |
+| 6"    |     |                      |
++-------+-----+----------------------+
+| "flo  | 2   | 16-bit IEEE float    |
+| at16" |     | (e5, m10)            |
++-------+-----+----------------------+
+| "flo  | 4   | 32-bit float         |
+| at32" |     |                      |
++-------+-----+----------------------+
+| "com  | 8   | 64-bit complex float |
+| plex  |     |                      |
+| 64"   |     |                      |
++-------+-----+----------------------+
+
+Data type are aranged in a hierarchy. See the "DtypeCategory" object
+documentation for more information. Use "issubdtype()" to determine if
+one "dtype" (or category) is a subtype of another category.
+
++------------+--------------------------------------------------------------------------------------------+
+| "Dtype"    | An object to hold the type of a "array".                                                   |
++------------+--------------------------------------------------------------------------------------------+
+| "DtypeCat  | Type to hold categories of "dtypes".                                                       |
+| egory"(va  |                                                                                            |
+| lue[,      |                                                                                            |
+| names,     |                                                                                            |
+| module,    |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "issubdty  | Check if a "Dtype" or "DtypeCategory" is a subtype of another.                             |
+| pe"(arg1,  |                                                                                            |
+| arg2)      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.Dtype
+
+  * "Dtype"
+
+    * "Dtype.__init__()"
+
+* mlx.core.DtypeCategory
+
+  * "DtypeCategory"
+
+    * "DtypeCategory.__init__()"
+
+* mlx.core.issubdtype
+
+  * "issubdtype()"

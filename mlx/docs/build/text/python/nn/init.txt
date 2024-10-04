@@ -1,0 +1,92 @@
+Initializers
+************
+
+The "mlx.nn.init" package contains commonly used initializers for
+neural network parameters. Initializers return a function which can be
+applied to any input "mlx.core.array" to produce an initialized
+output.
+
+For example:
+
+   import mlx.core as mx
+   import mlx.nn as nn
+
+   init_fn = nn.init.uniform()
+
+   # Produces a [2, 2] uniform matrix
+   param = init_fn(mx.zeros((2, 2)))
+
+To re-initialize all the parameter in an "mlx.nn.Module" from say a
+uniform distribution, you can do:
+
+   import mlx.nn as nn
+   model = nn.Sequential(nn.Linear(5, 10), nn.ReLU(), nn.Linear(10, 5))
+   init_fn = nn.init.uniform(low=-0.1, high=0.1)
+   model.apply(init_fn)
+
++------------+--------------------------------------------------------------------------------------------+
+| "constant  | An initializer that returns an array filled with "value".                                  |
+| "(value[,  |                                                                                            |
+| dtype])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "normal"(  | An initializer that returns samples from a normal distribution.                            |
+| [mean,     |                                                                                            |
+| std,       |                                                                                            |
+| dtype])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "uniform"  | An initializer that returns samples from a uniform distribution.                           |
+| ([low,     |                                                                                            |
+| high,      |                                                                                            |
+| dtype])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "identity  | An initializer that returns an identity matrix.                                            |
+| "([dtype]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "glorot_n  | A Glorot normal initializer.                                                               |
+| ormal"([d  |                                                                                            |
+| type])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "glorot_u  | A Glorot uniform initializer.                                                              |
+| niform"([  |                                                                                            |
+| dtype])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "he_norma  | Build a He normal initializer.                                                             |
+| l"([dtype  |                                                                                            |
+| ])         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "he_unifo  | A He uniform (Kaiming uniform) initializer.                                                |
+| rm"([dtyp  |                                                                                            |
+| e])        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.nn.init.constant
+
+  * "constant()"
+
+* mlx.nn.init.normal
+
+  * "normal()"
+
+* mlx.nn.init.uniform
+
+  * "uniform()"
+
+* mlx.nn.init.identity
+
+  * "identity()"
+
+* mlx.nn.init.glorot_normal
+
+  * "glorot_normal()"
+
+* mlx.nn.init.glorot_uniform
+
+  * "glorot_uniform()"
+
+* mlx.nn.init.he_normal
+
+  * "he_normal()"
+
+* mlx.nn.init.he_uniform
+
+  * "he_uniform()"

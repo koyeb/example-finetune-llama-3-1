@@ -1,0 +1,22 @@
+mlx.core.fft.fft
+****************
+
+fft(a: array, n: int | None = None, axis: int = -1, stream: Stream | Device | None = None) -> array
+
+   One dimensional discrete Fourier Transform.
+
+   Parameters:
+      * **a** (*array*) -- The input array.
+
+      * **n** (*int**, **optional*) -- Size of the transformed axis.
+        The corresponding axis in the input is truncated or padded
+        with zeros to match "n". The default value is "a.shape[axis]".
+
+      * **axis** (*int**, **optional*) -- Axis along which to perform
+        the FFT. The default is "-1".
+
+   Returns:
+      The DFT of the input along the given axis.
+
+   Return type:
+      *array*

@@ -1,0 +1,25 @@
+mlx.core.var
+************
+
+var(a: array, /, axis: None | int | Sequence[int] = None, keepdims: bool = False, ddof: int = 0, *, stream: None | Stream | Device = None) -> array
+
+   Compute the variance(s) over the given axes.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **axis** (*int** or **list**(**int**)**, **optional*) --
+        Optional axis or axes to reduce over. If unspecified this
+        defaults to reducing over the entire array.
+
+      * **keepdims** (*bool**, **optional*) -- Keep reduced axes as
+        singleton dimensions, defaults to *False*.
+
+      * **ddof** (*int**, **optional*) -- The divisor to compute the
+        variance is "N - ddof", defaults to 0.
+
+   Returns:
+      The output array of variances.
+
+   Return type:
+      *array*

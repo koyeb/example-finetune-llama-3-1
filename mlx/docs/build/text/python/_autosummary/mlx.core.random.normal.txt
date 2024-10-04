@@ -1,0 +1,27 @@
+mlx.core.random.normal
+**********************
+
+normal(shape: Sequence[int] = [], dtype: Dtype | None = float32, loc: float = 0.0, scale: float = 1.0, key: array | None = None, stream: None | Stream | Device = None) -> array
+
+   Generate normally distributed random numbers.
+
+   Parameters:
+      * **shape** (*list**(**int**)**, **optional*) -- Shape of the
+        output. Default is "()".
+
+      * **dtype** (*Dtype**, **optional*) -- Type of the output.
+        Default is "float32".
+
+      * **loc** (*float**, **optional*) -- Mean of the distribution.
+        Default is "0.0".
+
+      * **scale** (*float**, **optional*) -- Standard deviation of the
+        distribution. Default is "1.0".
+
+      * **key** (*array**, **optional*) -- A PRNG key. Default: None.
+
+   Returns:
+      The output array of random values.
+
+   Return type:
+      *array*

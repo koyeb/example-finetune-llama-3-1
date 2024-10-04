@@ -1,0 +1,13 @@
+mlx.nn.gelu
+***********
+
+class gelu(x)
+
+   Applies the Gaussian Error Linear Units function.
+
+      \textrm{GELU}(x) = x * \Phi(x)
+
+   where \Phi(x) is the Gaussian CDF.
+
+   See also "gelu_approx()" and "gelu_fast_approx()" for faster
+   approximations.

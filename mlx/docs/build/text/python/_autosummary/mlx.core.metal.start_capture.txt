@@ -1,0 +1,10 @@
+mlx.core.metal.start_capture
+****************************
+
+start_capture(path: str) -> None
+
+   Start a Metal capture.
+
+   Parameters:
+      **path** (*str*) -- The path to save the capture which should
+      have the extension ".gputrace".

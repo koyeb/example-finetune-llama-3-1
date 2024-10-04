@@ -1,0 +1,10 @@
+mlx.nn.hard_shrink
+******************
+
+class hard_shrink(x, lambd=0.5)
+
+   Applies the HardShrink activation function.
+
+      \text{hardshrink}(x) = \begin{cases} x & \text{if } x > \lambda
+      \\ x & \text{if } x < -\lambda \\ 0 & \text{otherwise}
+      \end{cases}

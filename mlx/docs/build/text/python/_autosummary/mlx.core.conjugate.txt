@@ -1,0 +1,16 @@
+mlx.core.conjugate
+******************
+
+conjugate(a: array, *, stream: None | Stream | Device = None) -> array
+
+   Return the elementwise complex conjugate of the input. Alias for
+   *mx.conj*.
+
+   Parameters:
+      **a** (*array*) -- Input array
+
+   Returns:
+      The output array.
+
+   Return type:
+      *array*

@@ -1,0 +1,6 @@
+mlx.optimizers.Optimizer.state
+******************************
+
+property Optimizer.state
+
+   The optimizer's state dictionary.

@@ -1,0 +1,19 @@
+mlx.core.broadcast_to
+*********************
+
+broadcast_to(a: scalar | array, /, shape: Sequence[int], *, stream: None | Stream | Device = None) -> array
+
+   Broadcast an array to the given shape.
+
+   The broadcasting semantics are the same as Numpy.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **shape** (*list**(**int**)*) -- The shape to broadcast to.
+
+   Returns:
+      The output array with the new shape.
+
+   Return type:
+      *array*

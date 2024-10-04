@@ -1,0 +1,12 @@
+mlx.core.array.shape
+********************
+
+property array.shape
+
+   The shape of the array as a Python tuple.
+
+   Returns:
+      A tuple containing the sizes of each dimension.
+
+   Return type:
+      *tuple*(*int*)

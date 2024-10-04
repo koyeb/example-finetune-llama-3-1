@@ -1,0 +1,15 @@
+mlx.nn.Softshrink
+*****************
+
+class Softshrink(lambd=0.5)
+
+   Applies the Softshrink function.
+
+   See "softshrink()" for the functional equivalent.
+
+   Parameters:
+      **lambd** -- the \lambda value for Softshrink. Default: "0.5"
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

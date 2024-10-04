@@ -1,0 +1,15 @@
+mlx.core.arctan
+***************
+
+arctan(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise inverse tangent.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The inverse tangent of "a".
+
+   Return type:
+      *array*

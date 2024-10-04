@@ -1,0 +1,228 @@
+Module
+******
+
+class Module
+
+   Base class for building neural networks with MLX.
+
+   All the layers provided in "mlx.nn.layers" subclass this class and
+   your models should do the same.
+
+   A "Module" can contain other "Module" instances or "mlx.core.array"
+   instances in arbitrary nesting of python lists or dicts. The
+   "Module" then allows recursively extracting all the
+   "mlx.core.array" instances using "mlx.nn.Module.parameters()".
+
+   In addition, the "Module" has the concept of trainable and non
+   trainable parameters (called "frozen"). When using
+   "mlx.nn.value_and_grad()" the gradients are returned only with
+   respect to the trainable parameters. All arrays in a module are
+   trainable unless they are added in the "frozen" set by calling
+   "freeze()".
+
+      import mlx.core as mx
+      import mlx.nn as nn
+
+      class MyMLP(nn.Module):
+          def __init__(self, in_dims: int, out_dims: int, hidden_dims: int = 16):
+              super().__init__()
+
+              self.in_proj = nn.Linear(in_dims, hidden_dims)
+              self.out_proj = nn.Linear(hidden_dims, out_dims)
+
+          def __call__(self, x):
+              x = self.in_proj(x)
+              x = mx.maximum(x, 0)
+              return self.out_proj(x)
+
+      model = MyMLP(2, 1)
+
+      # All the model parameters are created but since MLX is lazy by
+      # default, they are not evaluated yet. Calling `mx.eval` actually
+      # allocates memory and initializes the parameters.
+      mx.eval(model.parameters())
+
+      # Setting a parameter to a new value is as simply as accessing that
+      # parameter and assigning a new array to it.
+      model.in_proj.weight = model.in_proj.weight * 2
+      mx.eval(model.parameters())
+
+   -[ Attributes ]-
+
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.t  | Boolean indicating if the model is in training mode.                                       |
+   | raining"   |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.s  | The module's state dictionary                                                              |
+   | tate"      |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+
+   * mlx.nn.Module.training
+
+     * "Module.training"
+
+   * mlx.nn.Module.state
+
+     * "Module.state"
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.a  | Map all the parameters using the provided "map_fn" and immediately update the module with  |
+   | pply"(map  | the mapped parameters.                                                                     |
+   | _fn[, fil  |                                                                                            |
+   | ter_fn])   |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.a  | Apply a function to all the modules in this instance (including this instance).            |
+   | pply_to_m  |                                                                                            |
+   | odules"(a  |                                                                                            |
+   | pply_fn)   |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.c  | Return the direct descendants of this Module instance.                                     |
+   | hildren"() |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.e  | Set the model to evaluation mode.                                                          |
+   | val"()     |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.f  | Recursively filter the contents of the module using "filter_fn", namely only select keys   |
+   | ilter_and  | and values where "filter_fn" returns true.                                                 |
+   | _map"(fil  |                                                                                            |
+   | ter_fn[,   |                                                                                            |
+   | map_fn,    |                                                                                            |
+   | ...])      |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.f  | Freeze the Module's parameters or some of them.                                            |
+   | reeze"(*[, |                                                                                            |
+   | recurse,   |                                                                                            |
+   | keys,      |                                                                                            |
+   | strict])   |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.l  | Return the submodules that do not contain other modules.                                   |
+   | eaf_modul  |                                                                                            |
+   | es"()      |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.l  | Update the model's weights from a ".npz", a ".safetensors" file, or a list.                |
+   | oad_weigh  |                                                                                            |
+   | ts"(file_  |                                                                                            |
+   | or_weight  |                                                                                            |
+   | s[,        |                                                                                            |
+   | strict])   |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.m  | Return a list with all the modules in this instance.                                       |
+   | odules"()  |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.n  | Return a list with all the modules in this instance and their name with dot notation.      |
+   | amed_modu  |                                                                                            |
+   | les"()     |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.p  | Recursively return all the "mlx.core.array" members of this Module as a dict of dicts and  |
+   | arameters  | lists.                                                                                     |
+   | "()        |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.s  | Save the model's weights to a file.                                                        |
+   | ave_weigh  |                                                                                            |
+   | ts"(file)  |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.s  | Set the dtype of the module's parameters.                                                  |
+   | et_dtype"  |                                                                                            |
+   | (dtype[,   |                                                                                            |
+   | predicate  |                                                                                            |
+   | ])         |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.t  | Set the model in or out of training mode.                                                  |
+   | rain"([mo  |                                                                                            |
+   | de])       |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.t  | Recursively return all the non frozen "mlx.core.array" members of this Module as a dict of |
+   | rainable_  | dicts and lists.                                                                           |
+   | parameter  |                                                                                            |
+   | s"()       |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.u  | Unfreeze the Module's parameters or some of them.                                          |
+   | nfreeze"(  |                                                                                            |
+   | *[,        |                                                                                            |
+   | recurse,   |                                                                                            |
+   | keys,      |                                                                                            |
+   | strict])   |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.u  | Replace the parameters of this Module with the provided ones in the dict of dicts and      |
+   | pdate"(pa  | lists.                                                                                     |
+   | rameters)  |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "Module.u  | Replace the child modules of this "Module" instance with the provided ones in the dict of  |
+   | pdate_mod  | dicts and lists.                                                                           |
+   | ules"(mod  |                                                                                            |
+   | ules)      |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+
+   * mlx.nn.Module.apply
+
+     * "Module.apply()"
+
+   * mlx.nn.Module.apply_to_modules
+
+     * "Module.apply_to_modules()"
+
+   * mlx.nn.Module.children
+
+     * "Module.children()"
+
+   * mlx.nn.Module.eval
+
+     * "Module.eval()"
+
+   * mlx.nn.Module.filter_and_map
+
+     * "Module.filter_and_map()"
+
+   * mlx.nn.Module.freeze
+
+     * "Module.freeze()"
+
+   * mlx.nn.Module.leaf_modules
+
+     * "Module.leaf_modules()"
+
+   * mlx.nn.Module.load_weights
+
+     * "Module.load_weights()"
+
+   * mlx.nn.Module.modules
+
+     * "Module.modules()"
+
+   * mlx.nn.Module.named_modules
+
+     * "Module.named_modules()"
+
+   * mlx.nn.Module.parameters
+
+     * "Module.parameters()"
+
+   * mlx.nn.Module.save_weights
+
+     * "Module.save_weights()"
+
+   * mlx.nn.Module.set_dtype
+
+     * "Module.set_dtype()"
+
+   * mlx.nn.Module.train
+
+     * "Module.train()"
+
+   * mlx.nn.Module.trainable_parameters
+
+     * "Module.trainable_parameters()"
+
+   * mlx.nn.Module.unfreeze
+
+     * "Module.unfreeze()"
+
+   * mlx.nn.Module.update
+
+     * "Module.update()"
+
+   * mlx.nn.Module.update_modules
+
+     * "Module.update_modules()"

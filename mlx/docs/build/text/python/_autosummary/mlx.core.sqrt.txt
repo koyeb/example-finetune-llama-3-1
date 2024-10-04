@@ -1,0 +1,15 @@
+mlx.core.sqrt
+*************
+
+sqrt(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise square root.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The square root of "a".
+
+   Return type:
+      *array*

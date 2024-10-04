@@ -1,0 +1,17 @@
+mlx.nn.Module.train
+*******************
+
+Module.train(mode: bool = True) -> Module
+
+   Set the model in or out of training mode.
+
+   Training mode only applies to certain layers. For example "Dropout"
+   applies a random mask in training mode, but is the identity in
+   evaluation mode.
+
+   Parameters:
+      **mode** (*bool*) -- Indicate if the model should be in training
+      or evaluation mode. Default: "True".
+
+   Returns:
+      The module instance after updating the training mode.

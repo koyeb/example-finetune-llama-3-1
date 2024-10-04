@@ -1,0 +1,65 @@
+Linear Algebra
+**************
+
++------------+--------------------------------------------------------------------------------------------+
+| "inv"(a,   | Compute the inverse of a square matrix.                                                    |
+| *[,        |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "tri_inv"  | Compute the inverse of a triangular square matrix.                                         |
+| (a[,       |                                                                                            |
+| upper,     |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "norm"(a,  | Matrix or vector norm.                                                                     |
+| /[, ord,   |                                                                                            |
+| axis,      |                                                                                            |
+| keepdims,  |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "cholesky  | Compute the Cholesky decomposition of a real symmetric positive semi- definite matrix.     |
+| "(a[,      |                                                                                            |
+| upper,     |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "cholesky  | Compute the inverse of a real symmetric positive semi-definite matrix using it's Cholesky  |
+| _inv"(L[,  | decomposition.                                                                             |
+| upper,     |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "qr"(a,    | The QR factorization of the input matrix.                                                  |
+| *[,        |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "svd"(a,   | The Singular Value Decomposition (SVD) of the input matrix.                                |
+| *[,        |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.linalg.inv
+
+  * "inv()"
+
+* mlx.core.linalg.tri_inv
+
+  * "tri_inv()"
+
+* mlx.core.linalg.norm
+
+  * "norm()"
+
+* mlx.core.linalg.cholesky
+
+  * "cholesky()"
+
+* mlx.core.linalg.cholesky_inv
+
+  * "cholesky_inv()"
+
+* mlx.core.linalg.qr
+
+  * "qr()"
+
+* mlx.core.linalg.svd
+
+  * "svd()"

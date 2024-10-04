@@ -1,0 +1,9 @@
+mlx.core.metal.get_active_memory
+********************************
+
+get_active_memory() -> int
+
+   Get the actively used memory in bytes.
+
+   Note, this will not always match memory use reported by the system
+   because it does not include cached memory buffers.

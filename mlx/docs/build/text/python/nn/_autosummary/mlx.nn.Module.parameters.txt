@@ -1,0 +1,7 @@
+mlx.nn.Module.parameters
+************************
+
+Module.parameters()
+
+   Recursively return all the "mlx.core.array" members of this Module
+   as a dict of dicts and lists.

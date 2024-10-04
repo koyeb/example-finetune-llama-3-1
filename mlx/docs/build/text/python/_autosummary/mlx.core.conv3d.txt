@@ -1,0 +1,39 @@
+mlx.core.conv3d
+***************
+
+conv3d(input: array, weight: array, /, stride: int | Tuple[int, int, int] = 1, padding: int | Tuple[int, int, int] = 0, dilation: int | Tuple[int, int, int] = 1, groups: int = 1, *, stream: None | Stream | Device = None) -> array
+
+   3D convolution over an input with several channels
+
+   Note: Only the default "groups=1" is currently supported.
+
+   Parameters:
+      * **input** (*array*) -- input array of shape "(N, D, H, W,
+        C_in)"
+
+      * **weight** (*array*) -- weight array of shape "(C_out, D, H,
+        W, C_in)"
+
+      * **stride** (*int** or **tuple**(**int**)**, **optional*) --
+        "tuple" of size 3 with kernel strides. All spatial dimensions
+        get the same stride if only one number is specified. Default:
+        "1".
+
+      * **padding** (*int** or **tuple**(**int**)**, **optional*) --
+        "tuple" of size 3 with symmetric input padding. All spatial
+        dimensions get the same padding if only one number is
+        specified. Default: "0".
+
+      * **dilation** (*int** or **tuple**(**int**)**, **optional*) --
+        "tuple" of size 3 with kernel dilation. All spatial dimensions
+        get the same dilation if only one number is specified.
+        Default: "1"
+
+      * **groups** (*int**, **optional*) -- input feature groups.
+        Default: "1".
+
+   Returns:
+      The convolved array.
+
+   Return type:
+      *array*

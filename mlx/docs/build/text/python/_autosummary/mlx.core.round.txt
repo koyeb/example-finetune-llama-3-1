@@ -1,0 +1,24 @@
+mlx.core.round
+**************
+
+round(a: array, /, decimals: int = 0, stream: None | Stream | Device = None) -> array
+
+   Round to the given number of decimals.
+
+   Basically performs:
+
+      s = 10**decimals
+      x = round(x * s) / s
+
+   Parameters:
+      * **a** (*array*) -- Input array
+
+      * **decimals** (*int*) -- Number of decimal places to round to.
+        (default: 0)
+
+   Returns:
+      An array of the same type as "a" rounded to the given number of
+      decimals.
+
+   Return type:
+      *array*

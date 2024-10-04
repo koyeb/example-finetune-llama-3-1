@@ -1,0 +1,8 @@
+mlx.nn.softmin
+**************
+
+class softmin(x, axis=-1)
+
+   Applies the Softmin function.
+
+   Applies \frac{e^{-x_i}}{\sum_j e^{-x_j}} element-wise.

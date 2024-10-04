@@ -1,0 +1,6 @@
+mlx.core.array.itemsize
+***********************
+
+property array.itemsize
+
+   The size of the array's datatype in bytes.

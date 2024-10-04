@@ -1,0 +1,20 @@
+mlx.core.isposinf
+*****************
+
+isposinf(a: array, stream: None | Stream | Device = None) -> array
+
+   Return a boolean array indicating which elements are positive
+   infinity.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **stream** (*Union**[**None**, **Stream**, **Device**]*) --
+        Optional stream or device.
+
+   Returns:
+      The boolean array indicating which elements are positive
+      infinity.
+
+   Return type:
+      *array*

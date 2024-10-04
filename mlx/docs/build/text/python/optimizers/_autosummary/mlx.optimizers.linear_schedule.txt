@@ -1,0 +1,25 @@
+mlx.optimizers.linear_schedule
+******************************
+
+linear_schedule(init: float, end: float, steps: int) -> Callable
+
+   Make a linear scheduler.
+
+   Parameters:
+      * **init** (*float*) -- Initial value.
+
+      * **end** (*float*) -- Final value.
+
+      * **steps** (*int*) -- Number of steps to apply the schedule
+        over. The value is "end" for any steps beyond "steps".
+
+   -[ Example ]-
+
+   >>> warmup = optim.linear_schedule(0, 1e-1, 100)
+   >>> optimizer = optim.Adam(learning_rate=warmup)
+   >>> optimizer.learning_rate
+   array(0.0, dtype=float32)
+   >>> for _ in range(101): optimizer.update({}, {})
+   ...
+   >>> optimizer.learning_rate
+   array(0.1, dtype=float32)

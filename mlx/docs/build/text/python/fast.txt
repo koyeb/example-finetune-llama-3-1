@@ -1,0 +1,67 @@
+Fast
+****
+
++------------+--------------------------------------------------------------------------------------------+
+| "rms_norm  | Root Mean Square normalization (RMS norm).                                                 |
+| "(x,       |                                                                                            |
+| weight,    |                                                                                            |
+| eps, *[,   |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "layer_no  | Layer normalization.                                                                       |
+| rm"(x,     |                                                                                            |
+| weight,    |                                                                                            |
+| bias, eps, |                                                                                            |
+| *[,        |                                                                                            |
+| stream])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "rope"(a,  | Apply rotary positional encoding to the input.                                             |
+| dims, *,   |                                                                                            |
+| tradition  |                                                                                            |
+| al, base,  |                                                                                            |
+| scale,     |                                                                                            |
+| ...)       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "scaled_d  | A fast implementation of multi-head attention: "O = softmax(Q @ K.T, dim=-1) @ V".         |
+| ot_produc  |                                                                                            |
+| t_attenti  |                                                                                            |
+| on"(q, k,  |                                                                                            |
+| v, *,      |                                                                                            |
+| scale)     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "affine_q  | Quantize the matrix "w" using the provided "scales" and "biases" and the "group_size" and  |
+| uantize"(  | "bits" configuration.                                                                      |
+| w, /,      |                                                                                            |
+| scales,    |                                                                                            |
+| biases[,   |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "metal_ke  | A jit-compiled custom Metal kernel defined from a source string.                           |
+| rnel"      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.fast.rms_norm
+
+  * "rms_norm()"
+
+* mlx.core.fast.layer_norm
+
+  * "layer_norm()"
+
+* mlx.core.fast.rope
+
+  * "rope()"
+
+* mlx.core.fast.scaled_dot_product_attention
+
+  * "scaled_dot_product_attention()"
+
+* mlx.core.fast.affine_quantize
+
+  * "affine_quantize()"
+
+* mlx.core.fast.metal_kernel
+
+  * "metal_kernel"
+
+    * "metal_kernel.__init__()"

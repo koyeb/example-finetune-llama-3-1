@@ -1,0 +1,23 @@
+mlx.core.linalg.inv
+*******************
+
+inv(a: array, *, stream: None | Stream | Device = None) -> array
+
+   Compute the inverse of a square matrix.
+
+   This function supports arrays with at least 2 dimensions. When the
+   input has more than two dimensions, the inverse is computed for
+   each matrix in the last two dimensions of "a".
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **stream** (*Stream**, **optional*) -- Stream or device.
+        Defaults to "None" in which case the default stream of the
+        default device is used.
+
+   Returns:
+      "ainv" such that "dot(a, ainv) = dot(ainv, a) = eye(a.shape[0])"
+
+   Return type:
+      *array*

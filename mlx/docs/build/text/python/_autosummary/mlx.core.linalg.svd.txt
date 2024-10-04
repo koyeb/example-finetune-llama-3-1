@@ -1,0 +1,25 @@
+mlx.core.linalg.svd
+*******************
+
+svd(a: array, *, stream: None | Stream | Device = None)
+
+   The Singular Value Decomposition (SVD) of the input matrix.
+
+   This function supports arrays with at least 2 dimensions. When the
+   input has more than two dimensions, the function iterates over all
+   indices of the first a.ndim - 2 dimensions and for each combination
+   SVD is applied to the last two indices.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **stream** (*Stream**, **optional*) -- Stream or device.
+        Defaults to "None" in which case the default stream of the
+        default device is used.
+
+   Returns:
+      The "U", "S", and "Vt" matrices, such that "A = U @ diag(S) @
+      Vt"
+
+   Return type:
+      *tuple*(*array*, *array*, *array*)

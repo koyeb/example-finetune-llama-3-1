@@ -1,0 +1,6 @@
+mlx.core.set_default_device
+***************************
+
+set_default_device(device: Device) -> None
+
+   Set the default device.

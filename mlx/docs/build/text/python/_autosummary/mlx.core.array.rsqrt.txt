@@ -1,0 +1,6 @@
+mlx.core.array.rsqrt
+********************
+
+array.rsqrt(self, *, stream: Stream | Device | None = None) -> array
+
+   See "rsqrt()".

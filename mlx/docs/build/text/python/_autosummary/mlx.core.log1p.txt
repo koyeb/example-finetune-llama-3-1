@@ -1,0 +1,15 @@
+mlx.core.log1p
+**************
+
+log1p(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise natural log of one plus the array.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The natural logarithm of one plus "a".
+
+   Return type:
+      *array*

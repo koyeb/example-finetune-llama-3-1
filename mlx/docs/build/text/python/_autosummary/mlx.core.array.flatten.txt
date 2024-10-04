@@ -1,0 +1,6 @@
+mlx.core.array.flatten
+**********************
+
+array.flatten(self, start_axis: int = 0, end_axis: int = -1, *, stream: Stream | Device | None = None) -> array
+
+   See "flatten()".

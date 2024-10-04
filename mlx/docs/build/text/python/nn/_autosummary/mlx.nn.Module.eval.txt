@@ -1,0 +1,8 @@
+mlx.nn.Module.eval
+******************
+
+Module.eval() -> Module
+
+   Set the model to evaluation mode.
+
+   See "train()".

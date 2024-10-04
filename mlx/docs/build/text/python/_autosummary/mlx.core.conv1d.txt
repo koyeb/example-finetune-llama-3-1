@@ -1,0 +1,30 @@
+mlx.core.conv1d
+***************
+
+conv1d(input: array, weight: array, /, stride: int = 1, padding: int = 0, dilation: int = 1, groups: int = 1, *, stream: None | Stream | Device = None) -> array
+
+   1D convolution over an input with several channels
+
+   Parameters:
+      * **input** (*array*) -- input array of shape ("N", "H", "C_in")
+
+      * **weight** (*array*) -- weight array of shape ("C_out", "H",
+        "C_in")
+
+      * **stride** (*int**, **optional*) -- kernel stride. Default:
+        "1".
+
+      * **padding** (*int**, **optional*) -- input padding. Default:
+        "0".
+
+      * **dilation** (*int**, **optional*) -- kernel dilation.
+        Default: "1".
+
+      * **groups** (*int**, **optional*) -- input feature groups.
+        Default: "1".
+
+   Returns:
+      The convolved array.
+
+   Return type:
+      *array*

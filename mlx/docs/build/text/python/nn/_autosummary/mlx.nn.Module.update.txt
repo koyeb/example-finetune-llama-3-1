@@ -1,0 +1,22 @@
+mlx.nn.Module.update
+********************
+
+Module.update(parameters: dict) -> Module
+
+   Replace the parameters of this Module with the provided ones in the
+   dict of dicts and lists.
+
+   Commonly used by the optimizer to change the model to the updated
+   (optimized) parameters. Also used by the "mlx.nn.value_and_grad()"
+   to set the tracers in the model in order to compute gradients.
+
+   The passed in parameters dictionary need not be a full dictionary
+   similar to "parameters()". Only the provided locations will be
+   updated.
+
+   Parameters:
+      **parameters** (*dict*) -- A complete or partial dictionary of
+      the modules parameters.
+
+   Returns:
+      The module instance after updating the parameters.

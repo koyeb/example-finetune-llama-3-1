@@ -1,0 +1,9 @@
+mlx.core.random.seed
+********************
+
+seed(seed: int) -> None
+
+   Seed the global PRNG.
+
+   Parameters:
+      **seed** (*int*) -- Seed for the global PRNG.

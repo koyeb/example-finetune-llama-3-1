@@ -1,0 +1,9 @@
+mlx.nn.Module.modules
+*********************
+
+Module.modules()
+
+   Return a list with all the modules in this instance.
+
+   Returns:
+      A list of "mlx.nn.Module" instances.

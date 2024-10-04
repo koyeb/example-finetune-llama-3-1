@@ -1,0 +1,6 @@
+mlx.core.array.moveaxis
+***********************
+
+array.moveaxis(self, source: int, destination: int, *, stream: Stream | Device | None = None) -> array
+
+   See "moveaxis()".

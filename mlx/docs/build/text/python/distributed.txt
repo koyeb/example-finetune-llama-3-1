@@ -1,0 +1,47 @@
+Distributed Communication
+*************************
+
+MLX provides a distributed communication package using MPI. The MPI
+library is loaded at runtime; if MPI is available then distributed
+communication is also made available.
+
++------------+--------------------------------------------------------------------------------------------+
+| "Group"    | An "mlx.core.distributed.Group" represents a group of independent mlx processes that can   |
+|            | communicate.                                                                               |
++------------+--------------------------------------------------------------------------------------------+
+| "is_avail  | Check if a communication backend is available.                                             |
+| able"()    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "init"([s  | Initialize the communication backend and create the global communication group.            |
+| trict])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "all_sum"  | All reduce sum.                                                                            |
+| (x, *[,    |                                                                                            |
+| group])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "all_gath  | Gather arrays from all processes.                                                          |
+| er"(x, *[, |                                                                                            |
+| group])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.distributed.Group
+
+  * "Group"
+
+    * "Group.__init__()"
+
+* mlx.core.distributed.is_available
+
+  * "is_available()"
+
+* mlx.core.distributed.init
+
+  * "init()"
+
+* mlx.core.distributed.all_sum
+
+  * "all_sum()"
+
+* mlx.core.distributed.all_gather
+
+  * "all_gather()"

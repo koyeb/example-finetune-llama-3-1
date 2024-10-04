@@ -1,0 +1,15 @@
+mlx.core.arcsin
+***************
+
+arcsin(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise inverse sine.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The inverse sine of "a".
+
+   Return type:
+      *array*

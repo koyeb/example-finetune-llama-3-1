@@ -1,0 +1,20 @@
+mlx.core.save_safetensors
+*************************
+
+save_safetensors(file: str, arrays: Dict[str, array], metadata: Dict[str, str] | None = None)
+
+   Save array(s) to a binary file in ".safetensors" format.
+
+   See the Safetensors documentation for more information on the
+   format.
+
+   Parameters:
+      * **file** (*file**, **str*) -- File in which the array is
+        saved.
+
+      * **arrays** (*dict**(**str**, **array**)*) -- The dictionary of
+        names to arrays to
+
+      * **metadata** (*be saved.*) -- The dictionary of
+
+      * **saved.** (*metadata to be*)

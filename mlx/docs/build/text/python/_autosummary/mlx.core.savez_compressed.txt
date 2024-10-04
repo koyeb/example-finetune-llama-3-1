@@ -1,0 +1,15 @@
+mlx.core.savez_compressed
+*************************
+
+savez_compressed(file: str, *args, **kwargs)
+
+   Save several arrays to a binary file in compressed ".npz" format.
+
+   Parameters:
+      * **file** (*file**, **str*) -- Path to file to which the arrays
+        are saved.
+
+      * **args** (*arrays*) -- Arrays to be saved.
+
+      * **kwargs** (*arrays*) -- Arrays to be saved. Each array will
+        be saved with the associated keyword as the output file name.

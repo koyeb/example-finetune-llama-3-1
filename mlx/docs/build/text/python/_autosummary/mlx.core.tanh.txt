@@ -1,0 +1,15 @@
+mlx.core.tanh
+*************
+
+tanh(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise hyperbolic tangent.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The hyperbolic tangent of "a".
+
+   Return type:
+      *array*

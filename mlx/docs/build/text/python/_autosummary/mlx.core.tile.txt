@@ -1,0 +1,19 @@
+mlx.core.tile
+*************
+
+tile(a: array, reps: int | Sequence[int], /, *, stream: None | Stream | Device = None) -> array
+
+   Construct an array by repeating "a" the number of times given by
+   "reps".
+
+   Parameters:
+      * **a** (*array*) -- Input array
+
+      * **reps** (*int** or **list**(**int**)*) -- The number of times
+        to repeat "a" along each axis.
+
+   Returns:
+      The tiled array.
+
+   Return type:
+      *array*

@@ -1,0 +1,15 @@
+mlx.core.sin
+************
+
+sin(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise sine.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The sine of "a".
+
+   Return type:
+      *array*

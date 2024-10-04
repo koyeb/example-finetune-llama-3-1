@@ -1,0 +1,23 @@
+mlx.core.fft.ifft2
+******************
+
+ifft2(a: array, s: Sequence[int] | None = None, axes: Sequence[int] | None = [-2, -1], stream: Stream | Device | None = None) -> array
+
+   Two dimensional inverse discrete Fourier Transform.
+
+   Parameters:
+      * **a** (*array*) -- The input array.
+
+      * **s** (*list**(**int**)**, **optional*) -- Sizes of the
+        transformed axes. The corresponding axes in the input are
+        truncated or padded with zeros to match the sizes in "s". The
+        default value is the sizes of "a" along "axes".
+
+      * **axes** (*list**(**int**)**, **optional*) -- Axes along which
+        to perform the FFT. The default is "[-2, -1]".
+
+   Returns:
+      The inverse DFT of the input along the given axes.
+
+   Return type:
+      *array*

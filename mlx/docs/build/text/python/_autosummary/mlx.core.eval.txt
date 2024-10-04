@@ -1,0 +1,12 @@
+mlx.core.eval
+*************
+
+eval(*args) -> None
+
+   Evaluate an "array" or tree of "array".
+
+   Parameters:
+      ***args** (*arrays** or **trees** of **arrays*) -- Each argument
+      can be a single array or a tree of arrays. If a tree is given
+      the nodes can be a Python "list", "tuple" or "dict". Leaves
+      which are not arrays are ignored.

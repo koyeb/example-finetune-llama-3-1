@@ -1,0 +1,21 @@
+mlx.core.remainder
+******************
+
+remainder(a: scalar | array, b: scalar | array, stream: None | Stream | Device = None) -> array
+
+   Element-wise remainder of division.
+
+   Computes the remainder of dividing a with b with numpy-style
+   broadcasting semantics. Either or both input arrays can also be
+   scalars.
+
+   Parameters:
+      * **a** (*array*) -- Input array or scalar.
+
+      * **b** (*array*) -- Input array or scalar.
+
+   Returns:
+      The remainder of "a // b".
+
+   Return type:
+      *array*

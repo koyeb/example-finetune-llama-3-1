@@ -1,0 +1,22 @@
+mlx.core.argmin
+***************
+
+argmin(a: array, /, axis: None | int = None, keepdims: bool = False, *, stream: None | Stream | Device = None) -> array
+
+   Indices of the minimum values along the axis.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **axis** (*int**, **optional*) -- Optional axis to reduce
+        over. If unspecified this defaults to reducing over the entire
+        array.
+
+      * **keepdims** (*bool**, **optional*) -- Keep reduced axes as
+        singleton dimensions, defaults to *False*.
+
+   Returns:
+      The "uint32" array with the indices of the minimum values.
+
+   Return type:
+      *array*

@@ -1,0 +1,18 @@
+mlx.core.outer
+**************
+
+outer(a: array, b: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Compute the outer product of two 1-D arrays, if the array's passed
+   are not 1-D a flatten op will be run beforehand.
+
+   Parameters:
+      * **a** (*array*) -- Input array
+
+      * **b** (*array*) -- Input array
+
+   Returns:
+      The outer product.
+
+   Return type:
+      *array*

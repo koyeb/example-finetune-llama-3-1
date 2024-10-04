@@ -1,0 +1,94 @@
+Common Optimizers
+*****************
+
++------------+--------------------------------------------------------------------------------------------+
+| "SGD"(lea  | The stochastic gradient descent optimizer.                                                 |
+| rning_rat  |                                                                                            |
+| e[,        |                                                                                            |
+| momentum,  |                                                                                            |
+| weight_de  |                                                                                            |
+| cay, ...]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "RMSprop"  | The RMSprop optimizer [1].                                                                 |
+| (learning  |                                                                                            |
+| _rate[,    |                                                                                            |
+| alpha,     |                                                                                            |
+| eps])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Adagrad"  | The Adagrad optimizer [1].                                                                 |
+| (learning  |                                                                                            |
+| _rate[,    |                                                                                            |
+| eps])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Adafacto  | The Adafactor optimizer.                                                                   |
+| r"([learn  |                                                                                            |
+| ing_rate,  |                                                                                            |
+| eps, ...]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "AdaDelta  | The AdaDelta optimizer with a learning rate [1].                                           |
+| "(learnin  |                                                                                            |
+| g_rate[,   |                                                                                            |
+| rho, eps]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Adam"(le  | The Adam optimizer [1].                                                                    |
+| arning_ra  |                                                                                            |
+| te[,       |                                                                                            |
+| betas,     |                                                                                            |
+| eps])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "AdamW"(l  | The AdamW optimizer [1].                                                                   |
+| earning_r  |                                                                                            |
+| ate[,      |                                                                                            |
+| betas,     |                                                                                            |
+| eps, weig  |                                                                                            |
+| ht_decay]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Adamax"(  | The Adamax optimizer, a variant of Adam based on the infinity norm [1].                    |
+| learning_  |                                                                                            |
+| rate[,     |                                                                                            |
+| betas,     |                                                                                            |
+| eps])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Lion"(le  | The Lion optimizer [1].                                                                    |
+| arning_ra  |                                                                                            |
+| te[,       |                                                                                            |
+| betas, we  |                                                                                            |
+| ight_deca  |                                                                                            |
+| y])        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.optimizers.SGD
+
+  * "SGD"
+
+* mlx.optimizers.RMSprop
+
+  * "RMSprop"
+
+* mlx.optimizers.Adagrad
+
+  * "Adagrad"
+
+* mlx.optimizers.Adafactor
+
+  * "Adafactor"
+
+* mlx.optimizers.AdaDelta
+
+  * "AdaDelta"
+
+* mlx.optimizers.Adam
+
+  * "Adam"
+
+* mlx.optimizers.AdamW
+
+  * "AdamW"
+
+* mlx.optimizers.Adamax
+
+  * "Adamax"
+
+* mlx.optimizers.Lion
+
+  * "Lion"

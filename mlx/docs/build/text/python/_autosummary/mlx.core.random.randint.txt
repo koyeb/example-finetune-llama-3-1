@@ -1,0 +1,32 @@
+mlx.core.random.randint
+***********************
+
+randint(low: scalar | array, high: scalar | array, shape: Sequence[int] = [], dtype: Dtype | None = int32, key: array | None = None, stream: None | Stream | Device = None) -> array
+
+   Generate random integers from the given interval.
+
+   The values are sampled with equal probability from the integers in
+   half-open interval "[low, high)". The lower and upper bound can be
+   scalars or arrays and must be roadcastable to "shape".
+
+   Parameters:
+      * **low** (*scalar** or **array*) -- Lower bound of the
+        interval.
+
+      * **high** (*scalar** or **array*) -- Upper bound of the
+        interval.
+
+      * **shape** (*list**(**int**)**, **optional*) -- Shape of the
+        output. Default: "()".
+
+      * **dtype** (*Dtype**, **optional*) -- Type of the output.
+        Default: "int32".
+
+      * **key** (*array**, **optional*) -- A PRNG key. Default:
+        "None".
+
+   Returns:
+      The array of random integers.
+
+   Return type:
+      *array*

@@ -1,0 +1,6 @@
+mlx.nn.Module.children
+**********************
+
+Module.children()
+
+   Return the direct descendants of this Module instance.

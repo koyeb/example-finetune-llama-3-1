@@ -1,0 +1,6 @@
+mlx.core.array.cos
+******************
+
+array.cos(self, *, stream: Stream | Device | None = None) -> array
+
+   See "cos()".

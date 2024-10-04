@@ -1,0 +1,8 @@
+mlx.core.metal.clear_cache
+**************************
+
+clear_cache() -> None
+
+   Clear the memory cache.
+
+   After calling this, "get_cache_memory()" should return "0".

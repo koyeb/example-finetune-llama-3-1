@@ -1,0 +1,33 @@
+mlx.core.linalg.cholesky
+************************
+
+cholesky(a: array, upper: bool = False, *, stream: None | Stream | Device = None) -> array
+
+   Compute the Cholesky decomposition of a real symmetric positive
+   semi-definite matrix.
+
+   This function supports arrays with at least 2 dimensions. When the
+   input has more than two dimensions, the Cholesky decomposition is
+   computed for each matrix in the last two dimensions of "a".
+
+   If the input matrix is not symmetric positive semi-definite,
+   behaviour is undefined.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **upper** (*bool**, **optional*) -- If "True", return the
+        upper triangular Cholesky factor. If "False", return the lower
+        triangular Cholesky factor. Default: "False".
+
+      * **stream** (*Stream**, **optional*) -- Stream or device.
+        Defaults to "None" in which case the default stream of the
+        default device is used.
+
+   Returns:
+      If "upper = False", it returns a lower triangular "L" matrix
+      such that "dot(L, L.T) = a".  If "upper = True", it returns an
+      upper triangular "U" matrix such that "dot(U.T, U) = a".
+
+   Return type:
+      *array*

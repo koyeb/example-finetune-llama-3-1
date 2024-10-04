@@ -1,0 +1,6 @@
+mlx.core.array.diagonal
+***********************
+
+array.diagonal(self, offset: int = 0, axis1: int = 0, axis2: int = 1, stream: Stream | Device | None = None) -> array
+
+   See "diagonal()".

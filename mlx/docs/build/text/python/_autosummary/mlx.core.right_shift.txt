@@ -1,0 +1,21 @@
+mlx.core.right_shift
+********************
+
+right_shift(a: scalar | array, b: scalar | array, stream: None | Stream | Device = None) -> array
+
+   Element-wise right shift.
+
+   Shift the bits of the first input to the right by the second using
+   numpy-style broadcasting semantics. Either or both input arrays can
+   also be scalars.
+
+   Parameters:
+      * **a** (*array*) -- Input array or scalar.
+
+      * **b** (*array*) -- Input array or scalar.
+
+   Returns:
+      The bitwise right shift "a >> b".
+
+   Return type:
+      *array*

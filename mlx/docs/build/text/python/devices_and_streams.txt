@@ -1,0 +1,74 @@
+Devices and Streams
+*******************
+
++------------+--------------------------------------------------------------------------------------------+
+| "Device"   | A device to run operations on.                                                             |
++------------+--------------------------------------------------------------------------------------------+
+| "Stream"   | A stream for running operations on a given device.                                         |
++------------+--------------------------------------------------------------------------------------------+
+| "default_  | Get the default device.                                                                    |
+| device"()  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "set_defa  | Set the default device.                                                                    |
+| ult_devic  |                                                                                            |
+| e"(device) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "default_  | Get the device's default stream.                                                           |
+| stream"(d  |                                                                                            |
+| evice)     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "new_stre  | Make a new stream on the given device.                                                     |
+| am"(devic  |                                                                                            |
+| e)         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "set_defa  | Set the default stream.                                                                    |
+| ult_strea  |                                                                                            |
+| m"(stream) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "stream"(  | Create a context manager to set the default device and stream.                             |
+| s)         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "synchron  | Synchronize with the given stream.                                                         |
+| ize"([str  |                                                                                            |
+| eam])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.Device
+
+  * "Device"
+
+    * "Device.__init__()"
+
+* mlx.core.Stream
+
+  * "Stream"
+
+    * "Stream.__init__()"
+
+* mlx.core.default_device
+
+  * "default_device()"
+
+* mlx.core.set_default_device
+
+  * "set_default_device()"
+
+* mlx.core.default_stream
+
+  * "default_stream()"
+
+* mlx.core.new_stream
+
+  * "new_stream()"
+
+* mlx.core.set_default_stream
+
+  * "set_default_stream()"
+
+* mlx.core.stream
+
+  * "stream()"
+
+* mlx.core.synchronize
+
+  * "synchronize()"

@@ -1,0 +1,24 @@
+mlx.nn.init.identity
+********************
+
+identity(dtype: Dtype = mlx.core.float32) -> Callable[[array], array]
+
+   An initializer that returns an identity matrix.
+
+   Parameters:
+      **dtype** (*Dtype**, **optional*) -- The data type of the array.
+      Defaults: "float32".
+
+   Returns:
+      An initializer that returns an identity matrix with the same
+      shape as the input.
+
+   Return type:
+      *Callable*[[*array*], *array*]
+
+   -[ Example ]-
+
+   >>> init_fn = nn.init.identity()
+   >>> init_fn(mx.zeros((2, 2)))
+   array([[1, 0],
+          [0, 1]], dtype=float32)

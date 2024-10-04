@@ -1,0 +1,6 @@
+mlx.core.default_device
+***********************
+
+default_device() -> Device
+
+   Get the default device.

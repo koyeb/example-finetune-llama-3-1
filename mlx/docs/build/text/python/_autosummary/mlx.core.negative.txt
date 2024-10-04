@@ -1,0 +1,15 @@
+mlx.core.negative
+*****************
+
+negative(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise negation.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The negative of "a".
+
+   Return type:
+      *array*

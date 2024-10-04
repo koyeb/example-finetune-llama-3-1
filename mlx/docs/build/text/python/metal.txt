@@ -1,0 +1,89 @@
+Metal
+*****
+
++------------+--------------------------------------------------------------------------------------------+
+| "is_avail  | Check if the Metal back-end is available.                                                  |
+| able"()    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "device_i  | Get information about the GPU device and system settings.                                  |
+| nfo"()     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "get_acti  | Get the actively used memory in bytes.                                                     |
+| ve_memory  |                                                                                            |
+| "()        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "get_peak  | Get the peak amount of used memory in bytes.                                               |
+| _memory"() |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "reset_pe  | Reset the peak memory to zero.                                                             |
+| ak_memory  |                                                                                            |
+| "()        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "get_cach  | Get the cache size in bytes.                                                               |
+| e_memory"  |                                                                                            |
+| ()         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "set_memo  | Set the memory limit.                                                                      |
+| ry_limit"  |                                                                                            |
+| (limit,    |                                                                                            |
+| *[,        |                                                                                            |
+| relaxed])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "set_cach  | Set the free cache limit.                                                                  |
+| e_limit"(  |                                                                                            |
+| limit)     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "clear_ca  | Clear the memory cache.                                                                    |
+| che"()     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "start_ca  | Start a Metal capture.                                                                     |
+| pture"(pa  |                                                                                            |
+| th)        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "stop_cap  | Stop a Metal capture.                                                                      |
+| ture"()    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.core.metal.is_available
+
+  * "is_available()"
+
+* mlx.core.metal.device_info
+
+  * "device_info()"
+
+* mlx.core.metal.get_active_memory
+
+  * "get_active_memory()"
+
+* mlx.core.metal.get_peak_memory
+
+  * "get_peak_memory()"
+
+* mlx.core.metal.reset_peak_memory
+
+  * "reset_peak_memory()"
+
+* mlx.core.metal.get_cache_memory
+
+  * "get_cache_memory()"
+
+* mlx.core.metal.set_memory_limit
+
+  * "set_memory_limit()"
+
+* mlx.core.metal.set_cache_limit
+
+  * "set_cache_limit()"
+
+* mlx.core.metal.clear_cache
+
+  * "clear_cache()"
+
+* mlx.core.metal.start_capture
+
+  * "start_capture()"
+
+* mlx.core.metal.stop_capture
+
+  * "stop_capture()"

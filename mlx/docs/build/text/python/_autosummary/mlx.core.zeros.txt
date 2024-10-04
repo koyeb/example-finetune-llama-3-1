@@ -1,0 +1,19 @@
+mlx.core.zeros
+**************
+
+zeros(shape: int | Sequence[int], dtype: Dtype | None = float32, *, stream: None | Stream | Device = None) -> array
+
+   Construct an array of zeros.
+
+   Parameters:
+      * **shape** (*int** or **list**(**int**)*) -- The shape of the
+        output array.
+
+      * **dtype** (*Dtype**, **optional*) -- Data type of the output
+        array. If unspecified the output type defaults to "float32".
+
+   Returns:
+      The array of zeros with the specified shape.
+
+   Return type:
+      *array*

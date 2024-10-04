@@ -1,0 +1,41 @@
+mlx.nn.Conv3d
+*************
+
+class Conv3d(in_channels: int, out_channels: int, kernel_size: int | tuple, stride: int | tuple = 1, padding: int | tuple = 0, bias: bool = True)
+
+   Applies a 3-dimensional convolution over the multi-channel input
+   image.
+
+   The channels are expected to be last i.e. the input shape should be
+   "NDHWC" where:
+
+   * "N" is the batch dimension
+
+   * "D" is the input image depth
+
+   * "H" is the input image height
+
+   * "W" is the input image width
+
+   * "C" is the number of input channels
+
+   Parameters:
+      * **in_channels** (*int*) -- The number of input channels.
+
+      * **out_channels** (*int*) -- The number of output channels.
+
+      * **kernel_size** (*int** or **tuple*) -- The size of the
+        convolution filters.
+
+      * **stride** (*int** or **tuple**, **optional*) -- The size of
+        the stride when applying the filter. Default: "1".
+
+      * **padding** (*int** or **tuple**, **optional*) -- How many
+        positions to 0-pad the input with. Default: "0".
+
+      * **bias** (*bool**, **optional*) -- If "True" add a learnable
+        bias to the output. Default: "True"
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

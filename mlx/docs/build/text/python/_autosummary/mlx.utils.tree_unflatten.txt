@@ -1,0 +1,20 @@
+mlx.utils.tree_unflatten
+************************
+
+tree_unflatten(tree)
+
+   Recreate a Python tree from its flat representation.
+
+      from mlx.utils import tree_unflatten
+
+      d = tree_unflatten([("hello.world", 42)])
+      print(d)
+      # {"hello": {"world": 42}}
+
+   Parameters:
+      **tree** (*list**[**tuple**[**str**, **Any**]**]*) -- The flat
+      representation of a Python tree. For instance as returned by
+      "tree_flatten()".
+
+   Returns:
+      A Python tree.

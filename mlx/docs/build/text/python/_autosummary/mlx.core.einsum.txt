@@ -1,0 +1,18 @@
+mlx.core.einsum
+***************
+
+einsum(subscripts: str, *operands, *, stream: Union[None, Stream, Device] = None) -> array
+
+   Perform the Einstein summation convention on the operands.
+
+   Parameters:
+      * **subscripts** (*str*) -- The Einstein summation convention
+        equation.
+
+      * ***operands** (*array*) -- The input arrays.
+
+   Returns:
+      The output array.
+
+   Return type:
+      *array*

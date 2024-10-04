@@ -1,0 +1,19 @@
+mlx.core.squeeze
+****************
+
+squeeze(a: array, /, axis: None | int | Sequence[int] = None, *, stream: None | Stream | Device = None) -> array
+
+   Remove length one axes from an array.
+
+   Parameters:
+      * **a** (*array*) -- Input array.
+
+      * **axis** (*int** or **tuple**(**int**)**, **optional*) -- Axes
+        to remove. Defaults to "None" in which case all size one axes
+        are removed.
+
+   Returns:
+      The output array with size one axes removed.
+
+   Return type:
+      *array*

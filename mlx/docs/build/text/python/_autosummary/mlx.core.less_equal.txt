@@ -1,0 +1,20 @@
+mlx.core.less_equal
+*******************
+
+less_equal(a: scalar | array, b: scalar | array, stream: None | Stream | Device = None) -> array
+
+   Element-wise less than or equal.
+
+   Less than or equal on two arrays with numpy-style broadcasting
+   semantics. Either or both input arrays can also be scalars.
+
+   Parameters:
+      * **a** (*array*) -- Input array or scalar.
+
+      * **b** (*array*) -- Input array or scalar.
+
+   Returns:
+      The element-wise comparison "a <= b".
+
+   Return type:
+      *array*

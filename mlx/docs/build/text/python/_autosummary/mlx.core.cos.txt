@@ -1,0 +1,15 @@
+mlx.core.cos
+************
+
+cos(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise cosine.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The cosine of "a".
+
+   Return type:
+      *array*

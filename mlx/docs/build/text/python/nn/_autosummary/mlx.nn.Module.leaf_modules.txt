@@ -1,0 +1,6 @@
+mlx.nn.Module.leaf_modules
+**************************
+
+Module.leaf_modules()
+
+   Return the submodules that do not contain other modules.

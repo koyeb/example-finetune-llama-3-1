@@ -1,0 +1,12 @@
+mlx.nn.Hardswish
+****************
+
+class Hardswish
+
+   Applies the hardswish function, element-wise.
+
+   See "hardswish()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

@@ -1,0 +1,12 @@
+mlx.nn.HardTanh
+***************
+
+class HardTanh
+
+   Applies the HardTanh function.
+
+   See "hard_tanh()" for the functional equivalent.
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+

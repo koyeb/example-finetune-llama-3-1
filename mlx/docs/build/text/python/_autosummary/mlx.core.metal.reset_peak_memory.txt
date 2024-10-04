@@ -1,0 +1,6 @@
+mlx.core.metal.reset_peak_memory
+********************************
+
+reset_peak_memory() -> None
+
+   Reset the peak memory to zero.

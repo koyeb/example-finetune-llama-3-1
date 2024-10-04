@@ -1,0 +1,15 @@
+mlx.core.cosh
+*************
+
+cosh(a: array, /, *, stream: None | Stream | Device = None) -> array
+
+   Element-wise hyperbolic cosine.
+
+   Parameters:
+      **a** (*array*) -- Input array.
+
+   Returns:
+      The hyperbolic cosine of "a".
+
+   Return type:
+      *array*

@@ -1,0 +1,25 @@
+mlx.core.full
+*************
+
+full(shape: int | Sequence[int], vals: scalar | array, dtype: Dtype | None = None, *, stream: None | Stream | Device = None) -> array
+
+   Construct an array with the given value.
+
+   Constructs an array of size "shape" filled with "vals". If "vals"
+   is an "array" it must be broadcastable to the given "shape".
+
+   Parameters:
+      * **shape** (*int** or **list**(**int**)*) -- The shape of the
+        output array.
+
+      * **vals** (*float** or **int** or **array*) -- Values to fill
+        the array with.
+
+      * **dtype** (*Dtype**, **optional*) -- Data type of the output
+        array. If unspecified the output type is inferred from "vals".
+
+   Returns:
+      The output array with the specified shape and values.
+
+   Return type:
+      *array*

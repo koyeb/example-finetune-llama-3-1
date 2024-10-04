@@ -1,0 +1,27 @@
+mlx.core.metal.set_memory_limit
+*******************************
+
+set_memory_limit(limit: int, *, relaxed: bool = True) -> int
+
+   Set the memory limit.
+
+   Memory allocations will wait on scheduled tasks to complete if the
+   limit is exceeded. If there are no more scheduled tasks an error
+   will be raised if "relaxed" is "False". Otherwise memory will be
+   allocated (including the potential for swap) if "relaxed" is
+   "True".
+
+   The memory limit defaults to 1.5 times the maximum recommended
+   working set size reported by the device.
+
+   Parameters:
+      * **limit** (*int*) -- Memory limit in bytes.
+
+      * **relaxed** (*bool**, **optional*) -- If *False`* an error is
+        raised if the limit is exceeded. Default: "True"
+
+   Returns:
+      The previous memory limit in bytes.
+
+   Return type:
+      *int*

@@ -1,0 +1,6 @@
+mlx.core.array.log
+******************
+
+array.log(self, *, stream: Stream | Device | None = None) -> array
+
+   See "log()".

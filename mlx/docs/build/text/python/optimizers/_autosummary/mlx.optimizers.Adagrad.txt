@@ -1,0 +1,43 @@
+mlx.optimizers.Adagrad
+**********************
+
+class Adagrad(learning_rate: float | Callable[[array], array], eps: float = 1e-08)
+
+   The Adagrad optimizer [1].
+
+   Our Adagrad implementation follows the original paper. In detail,
+
+   [1]: Duchi, J., Hazan, E. and Singer, Y., 2011. Adaptive
+   subgradient methods for online learning and stochastic
+   optimization. JMLR 2011.
+
+      v_{t+1} &= v_t + g_t^2 \\ w_{t+1} &= w_t - \lambda
+      \frac{g_t}{\sqrt{v_{t+1}} + \epsilon}
+
+   Parameters:
+      * **learning_rate** (*float** or **callable*) -- The learning
+        rate \lambda.
+
+      * **eps** (*float**, **optional*) -- The term \epsilon added to
+        the denominator to improve numerical stability. Default:
+        "1e-8"
+
+   -[ Methods ]-
+
+   +------------+--------------------------------------------------------------------------------------------+
+   | "__init__  |                                                                                            |
+   | "(learnin  |                                                                                            |
+   | g_rate[,   |                                                                                            |
+   | eps])      |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "apply_si  | Performs the Adagrad parameter update and stores v in the optimizer state.                 |
+   | ngle"(gra  |                                                                                            |
+   | dient,     |                                                                                            |
+   | parameter, |                                                                                            |
+   | state)     |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+
+   | "init_sin  | Initialize optimizer state                                                                 |
+   | gle"(para  |                                                                                            |
+   | meter,     |                                                                                            |
+   | state)     |                                                                                            |
+   +------------+--------------------------------------------------------------------------------------------+

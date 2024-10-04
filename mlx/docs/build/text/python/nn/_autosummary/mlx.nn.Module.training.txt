@@ -1,0 +1,6 @@
+mlx.nn.Module.training
+**********************
+
+property Module.training
+
+   Boolean indicating if the model is in training mode.

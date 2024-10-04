@@ -1,0 +1,25 @@
+mlx.nn.losses.nll_loss
+**********************
+
+class nll_loss(inputs: array, targets: array, axis: int = -1, reduction: Literal['none', 'mean', 'sum'] = 'none')
+
+   Computes the negative log likelihood loss.
+
+   Parameters:
+      * **inputs** (*array*) -- The predicted distribution in log
+        space.
+
+      * **targets** (*array*) -- The target values.
+
+      * **axis** (*int**, **optional*) -- The distribution axis.
+        Default: "-1".
+
+      * **reduction** (*str**, **optional*) -- Specifies the reduction
+        to apply to the output: "'none'" | "'mean'" | "'sum'".
+        Default: "'none'".
+
+   Returns:
+      The computed NLL loss.
+
+   Return type:
+      *array*

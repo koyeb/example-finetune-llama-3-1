@@ -1,0 +1,415 @@
+Layers
+******
+
++------------+--------------------------------------------------------------------------------------------+
+| "ALiBi"()  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "AvgPool1  | Applies 1-dimensional average pooling.                                                     |
+| d"(kernel  |                                                                                            |
+| _size[,    |                                                                                            |
+| stride,    |                                                                                            |
+| padding])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "AvgPool2  | Applies 2-dimensional average pooling.                                                     |
+| d"(kernel  |                                                                                            |
+| _size[,    |                                                                                            |
+| stride,    |                                                                                            |
+| padding])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "BatchNor  | Applies Batch Normalization over a 2D or 3D input.                                         |
+| m"(num_fe  |                                                                                            |
+| atures[,   |                                                                                            |
+| eps,       |                                                                                            |
+| momentum,  |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Conv1d"(  | Applies a 1-dimensional convolution over the multi-channel input sequence.                 |
+| in_channe  |                                                                                            |
+| ls, out_c  |                                                                                            |
+| hannels,   |                                                                                            |
+| kernel_si  |                                                                                            |
+| ze)        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Conv2d"(  | Applies a 2-dimensional convolution over the multi-channel input image.                    |
+| in_channe  |                                                                                            |
+| ls, out_c  |                                                                                            |
+| hannels,   |                                                                                            |
+| kernel_si  |                                                                                            |
+| ze)        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Conv3d"(  | Applies a 3-dimensional convolution over the multi-channel input image.                    |
+| in_channe  |                                                                                            |
+| ls, out_c  |                                                                                            |
+| hannels,   |                                                                                            |
+| kernel_si  |                                                                                            |
+| ze)        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Dropout"  | Randomly zero a portion of the elements during training.                                   |
+| ([p])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Dropout2  | Apply 2D channel-wise dropout during training.                                             |
+| d"([p])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Dropout3  | Apply 3D channel-wise dropout during training.                                             |
+| d"([p])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Embeddin  | Implements a simple lookup table that maps each input integer to a high-dimensional        |
+| g"(num_em  | vector.                                                                                    |
+| beddings,  |                                                                                            |
+| dims)      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "GELU"([a  | Applies the Gaussian Error Linear Units.                                                   |
+| pprox])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "GLU"([ax  | Applies the gated linear unit function.                                                    |
+| is])       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "GroupNor  | Applies Group Normalization [1] to the inputs.                                             |
+| m"(num_gr  |                                                                                            |
+| oups,      |                                                                                            |
+| dims[,     |                                                                                            |
+| eps,       |                                                                                            |
+| affine,    |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "GRU"(inp  | A gated recurrent unit (GRU) RNN layer.                                                    |
+| ut_size,   |                                                                                            |
+| hidden_si  |                                                                                            |
+| ze[,       |                                                                                            |
+| bias])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "HardShri  | Applies the HardShrink function.                                                           |
+| nk"()      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "HardTanh  | Applies the HardTanh function.                                                             |
+| "()        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Hardswis  | Applies the hardswish function, element-wise.                                              |
+| h"()       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Instance  | Applies instance normalization [1] on the inputs.                                          |
+| Norm"(dim  |                                                                                            |
+| s[, eps,   |                                                                                            |
+| affine])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "LayerNor  | Applies layer normalization [1] on the inputs.                                             |
+| m"(dims[,  |                                                                                            |
+| eps,       |                                                                                            |
+| affine,    |                                                                                            |
+| bias])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "LeakyReL  | Applies the Leaky Rectified Linear Unit.                                                   |
+| U"([negat  |                                                                                            |
+| ive_slope  |                                                                                            |
+| ])         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Linear"(  | Applies an affine transformation to the input.                                             |
+| input_dim  |                                                                                            |
+| s, output  |                                                                                            |
+| _dims[,    |                                                                                            |
+| bias])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "LSTM"(in  | An LSTM recurrent layer.                                                                   |
+| put_size,  |                                                                                            |
+| hidden_si  |                                                                                            |
+| ze[,       |                                                                                            |
+| bias])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "MaxPool1  | Applies 1-dimensional max pooling.                                                         |
+| d"(kernel  |                                                                                            |
+| _size[,    |                                                                                            |
+| stride,    |                                                                                            |
+| padding])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "MaxPool2  | Applies 2-dimensional max pooling.                                                         |
+| d"(kernel  |                                                                                            |
+| _size[,    |                                                                                            |
+| stride,    |                                                                                            |
+| padding])  |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Mish"()   | Applies the Mish function, element-wise.                                                   |
++------------+--------------------------------------------------------------------------------------------+
+| "MultiHea  | Implements the scaled dot product attention with multiple heads.                           |
+| dAttentio  |                                                                                            |
+| n"(dims,   |                                                                                            |
+| num_heads  |                                                                                            |
+| [, ...])   |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "PReLU"([  | Applies the element-wise parametric ReLU.                                                  |
+| num_param  |                                                                                            |
+| eters,     |                                                                                            |
+| init])     |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Quantize  | The same as "Embedding" but with a  quantized weight matrix.                               |
+| dEmbeddin  |                                                                                            |
+| g"(num_em  |                                                                                            |
+| beddings,  |                                                                                            |
+| dims[,     |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Quantize  | Applies an affine transformation to the input using a quantized weight matrix.             |
+| dLinear"(  |                                                                                            |
+| input_dim  |                                                                                            |
+| s, output  |                                                                                            |
+| _dims[,    |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "RMSNorm"  | Applies Root Mean Square normalization [1] to the inputs.                                  |
+| (dims[,    |                                                                                            |
+| eps])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "ReLU"()   | Applies the Rectified Linear Unit.                                                         |
++------------+--------------------------------------------------------------------------------------------+
+| "ReLU6"()  | Applies the Rectified Linear Unit 6.                                                       |
++------------+--------------------------------------------------------------------------------------------+
+| "RNN"(inp  | An Elman recurrent layer.                                                                  |
+| ut_size,   |                                                                                            |
+| hidden_si  |                                                                                            |
+| ze[, bias, |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "RoPE"(di  | Implements the rotary positional encoding.                                                 |
+| ms[, trad  |                                                                                            |
+| itional,   |                                                                                            |
+| base,      |                                                                                            |
+| scale])    |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "SELU"()   | Applies the Scaled Exponential Linear Unit.                                                |
++------------+--------------------------------------------------------------------------------------------+
+| "Sequenti  | A layer that calls the passed callables in order.                                          |
+| al"(*modu  |                                                                                            |
+| les)       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "SiLU"()   | Applies the Sigmoid Linear Unit.                                                           |
++------------+--------------------------------------------------------------------------------------------+
+| "Sinusoid  | Implements sinusoidal positional encoding.                                                 |
+| alPositio  |                                                                                            |
+| nalEncodi  |                                                                                            |
+| ng"(dims[, |                                                                                            |
+| ...])      |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Softmin"  | Applies the Softmin function.                                                              |
+| ()         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Softshri  | Applies the Softshrink function.                                                           |
+| nk"([lamb  |                                                                                            |
+| d])        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Softsign  | Applies the Softsign function.                                                             |
+| "()        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Softmax"  | Applies the Softmax function.                                                              |
+| ()         |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Softplus  | Applies the Softplus function.                                                             |
+| "()        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Step"([t  | Applies the Step Activation Function.                                                      |
+| hreshold]) |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Tanh"()   | Applies the hyperbolic tangent function.                                                   |
++------------+--------------------------------------------------------------------------------------------+
+| "Transfor  | Implements a standard Transformer model.                                                   |
+| mer"(dims, |                                                                                            |
+| num_heads, |                                                                                            |
+| ...)       |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+| "Upsample  | Upsample the input signal spatially.                                                       |
+| "(scale_f  |                                                                                            |
+| actor[,    |                                                                                            |
+| mode, ali  |                                                                                            |
+| gn_corner  |                                                                                            |
+| s])        |                                                                                            |
++------------+--------------------------------------------------------------------------------------------+
+
+* mlx.nn.ALiBi
+
+  * "ALiBi"
+
+* mlx.nn.AvgPool1d
+
+  * "AvgPool1d"
+
+* mlx.nn.AvgPool2d
+
+  * "AvgPool2d"
+
+* mlx.nn.BatchNorm
+
+  * "BatchNorm"
+
+* mlx.nn.Conv1d
+
+  * "Conv1d"
+
+* mlx.nn.Conv2d
+
+  * "Conv2d"
+
+* mlx.nn.Conv3d
+
+  * "Conv3d"
+
+* mlx.nn.Dropout
+
+  * "Dropout"
+
+* mlx.nn.Dropout2d
+
+  * "Dropout2d"
+
+* mlx.nn.Dropout3d
+
+  * "Dropout3d"
+
+* mlx.nn.Embedding
+
+  * "Embedding"
+
+* mlx.nn.GELU
+
+  * "GELU"
+
+* mlx.nn.GLU
+
+  * "GLU"
+
+* mlx.nn.GroupNorm
+
+  * "GroupNorm"
+
+* mlx.nn.GRU
+
+  * "GRU"
+
+* mlx.nn.HardShrink
+
+  * "HardShrink"
+
+* mlx.nn.HardTanh
+
+  * "HardTanh"
+
+* mlx.nn.Hardswish
+
+  * "Hardswish"
+
+* mlx.nn.InstanceNorm
+
+  * "InstanceNorm"
+
+* mlx.nn.LayerNorm
+
+  * "LayerNorm"
+
+* mlx.nn.LeakyReLU
+
+  * "LeakyReLU"
+
+* mlx.nn.Linear
+
+  * "Linear"
+
+* mlx.nn.LSTM
+
+  * "LSTM"
+
+* mlx.nn.MaxPool1d
+
+  * "MaxPool1d"
+
+* mlx.nn.MaxPool2d
+
+  * "MaxPool2d"
+
+* mlx.nn.Mish
+
+  * "Mish"
+
+* mlx.nn.MultiHeadAttention
+
+  * "MultiHeadAttention"
+
+* mlx.nn.PReLU
+
+  * "PReLU"
+
+* mlx.nn.QuantizedEmbedding
+
+  * "QuantizedEmbedding"
+
+* mlx.nn.QuantizedLinear
+
+  * "QuantizedLinear"
+
+* mlx.nn.RMSNorm
+
+  * "RMSNorm"
+
+* mlx.nn.ReLU
+
+  * "ReLU"
+
+* mlx.nn.ReLU6
+
+  * "ReLU6"
+
+* mlx.nn.RNN
+
+  * "RNN"
+
+* mlx.nn.RoPE
+
+  * "RoPE"
+
+* mlx.nn.SELU
+
+  * "SELU"
+
+* mlx.nn.Sequential
+
+  * "Sequential"
+
+* mlx.nn.SiLU
+
+  * "SiLU"
+
+* mlx.nn.SinusoidalPositionalEncoding
+
+  * "SinusoidalPositionalEncoding"
+
+* mlx.nn.Softmin
+
+  * "Softmin"
+
+* mlx.nn.Softshrink
+
+  * "Softshrink"
+
+* mlx.nn.Softsign
+
+  * "Softsign"
+
+* mlx.nn.Softmax
+
+  * "Softmax"
+
+* mlx.nn.Softplus
+
+  * "Softplus"
+
+* mlx.nn.Step
+
+  * "Step"
+
+* mlx.nn.Tanh
+
+  * "Tanh"
+
+* mlx.nn.Transformer
+
+  * "Transformer"
+
+* mlx.nn.Upsample
+
+  * "Upsample"
